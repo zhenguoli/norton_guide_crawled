@@ -1,0 +1,50 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 4404h          receive control data from block device</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 4404h          receive control data from block device</b>">
+<title>function 4404h          receive control data from block device</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ngcdd9.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ngd38e.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 4404h          Receive Control Data from Block Device</B>
+
+    Reads control information of any length and format from a block
+    device driver. The format of the information is device-specific
+    and does not follow any standard.
+
+        <B>Entry</B>   AX    = 4404h
+                BL    = Drive number (0 = default, 1 = A, etc.)
+                CX    = Number of bytes to read
+                DS:DX = Address of data buffer
+
+        <B>Return</B>  Buffer updated
+                or
+                AX = Error code, if CF is set
+                     | 01h Invalid function
+                     | 05h Access denied
+                     | 06h Invalid handle
+                     | 0Dh Invalid data
+</pre><hr><b>See Also:</b> <a href="ngca5c.html">4402h</a> <a href="ngcdd9.html">4403h</a> <a href="ngd38e.html">4405h</a> <a href="ng2fe02.html">Dev03h</a> <pre></pre>
+
+
+</html>
+

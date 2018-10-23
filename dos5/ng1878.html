@@ -1,0 +1,66 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 06h            direct console i/o</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 06h            direct console i/o</b>">
+<title>function 06h            direct console i/o</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng1757.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng1ce0.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 06h            Direct Console I/O</B>
+
+    Reads a character (if one is available) from standard input or
+    outputs a character to standard output. Does not echo characters
+    read or check for Ctrl-C.
+
+    Character input:
+        <B>Entry</B>   AH = 06h
+                DL = FFh
+
+        <B>Return</B>  ZF = 1  No character available
+                        (AL undefined, but usually zero)
+                ZF = 0  AL = Character
+
+
+    Character output:
+        <B>Entry</B>   AH = 06h
+                DL = Character (&lt; FFh)
+
+        <B>Return</B>  AL = Character (undocumented)
+
+    ------------------------------------------------------------------
+
+    If no character is available when reading from standard input,
+    this function does not wait but returns immediately.
+
+    This function is typically used by programs that must be able to
+    read and write any character or control code. Ctrl-C is returned
+    as ASCII 03h.
+
+    If the character read from the keyboard is an extended key code
+    (for example, if the user presses one of the function keys), this
+    function returns 00h and the program must call the function again
+    to get the second byte of the extended key code.
+</pre><hr><b>See Also:</b> <a href="ng1ce0.html">07h</a> <a href="ng1f82.html">08h</a> <a href="ng22b8.html">0Bh</a> <a href="ng256f.html">0Ch</a> <pre></pre>
+
+
+</html>
+

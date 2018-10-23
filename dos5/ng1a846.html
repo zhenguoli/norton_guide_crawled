@@ -1,0 +1,67 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 5ah            create temporary file                        dos 3.0+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 5ah            create temporary file                        dos 3.0+</b>">
+<title>function 5ah            create temporary file                        dos 3.0+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng19dc7.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng1ad95.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 5Ah            Create Temporary File                        DOS 3.0+</B>
+
+    Creates a file with a unique name and returns both a handle for
+    the file and the new filename.
+
+        <B>Entry</B>   AH    = 5Ah
+                CX    = File attributes
+                DS:DX = Pointer to path ending in \ (ASCIIZ string)
+
+        <B>Return</B>  AX = File handle
+                Unique filename appended to path (ASCIIZ string)
+                or
+                AX = Error code, if CF is set
+                     | 03h Path not found
+                     | 04h No handle available
+                     | 05h Access denied
+
+    ------------------------------------------------------------------
+
+    Before function 5ah is invoked, DS:DX must point to a string that
+    specifies the path for the temporary file; the path must end with
+    a backslash (\) and a zero. The program must reserve the 13 bytes
+    immediately following the terminating zero to hold the temporary
+    filename.
+    The file attributes parameter can be a combination of:
+    attr_normal, attr_readonly, attr_hidden, attr_system, attr_archive.
+
+
+    When DOS creates a file, it opens it with read-and-write access
+    and compatibility sharing mode and sets the file pointer to zero.
+    If the attr_readonly attribute is specified, it takes affect only
+    after the new file is closed.
+
+    DOS does not delete temporary files; programs using temporary
+    files should delete them when they are no longer in use.
+</pre><hr><b>See Also:</b> <a href="ng7d90.html">3ch</a> <a href="ng1ad95.html">5bh</a> <a href="ng19dc7.html">59h</a> <a href="ng3af21.html">File attributes</a> <pre></pre>
+
+
+</html>
+

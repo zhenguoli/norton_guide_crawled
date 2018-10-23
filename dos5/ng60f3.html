@@ -1,0 +1,51 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 3301h          set ctrl-c check flag</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 3301h          set ctrl-c check flag</b>">
+<title>function 3301h          set ctrl-c check flag</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng5f0a.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng6398.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 3301h          Set Ctrl-C Check Flag</B>
+
+    Turns Ctrl-C check flag on or off.
+
+        <B>Entry</B>   AX = 3301h
+                DL = 0 | 1   Set BREAK flag off | on
+
+        <B>Return</B>  Nothing
+
+    ------------------------------------------------------------------
+
+    If the Ctrl-C (Ctrl-Break) flag is off, DOS checks for Ctrl-C
+    keystrokes only while processing I/O functions 01h through 0Ch.
+    If the flag is on, DOS checks for Ctrl-C while processing other
+    system functions, such as disk operations.
+
+    The Ctrl-C flag affects all programs. If a program changes the
+    state of this flag, the state change remains in effect even after
+    the program terminates.
+</pre><hr><b>See Also:</b> <a href="ng5f0a.html">3300h</a> <pre></pre>
+
+
+</html>
+

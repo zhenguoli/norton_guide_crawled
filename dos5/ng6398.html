@@ -1,0 +1,49 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 3305h          get startup drive</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 3305h          get startup drive</b>">
+<title>function 3305h          get startup drive</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng60f3.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng65ad.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 3305h          Get Startup Drive</B>
+
+    Returns the drive that was used to load DOS.
+
+        <B>Entry</B>   AX = 3305h
+
+        <B>Return</B>  DL = Drive number (1 = A, 2 = B, 3 = C etc.)
+
+    ------------------------------------------------------------------
+
+    On a ROM-based version of DOS, there may be no startup drive; in
+    this case, this function returns the number of the drive
+    containing the CONFIG.SYS file.
+
+
+    With DOS 5.0, function 3305h has been documented for DOS version
+    2.0 and later.
+</pre><hr><b>See Also:</b> <a href="ng3165.html">19h</a> <a href="ng2aef.html">0eh</a> <pre></pre>
+
+
+</html>
+

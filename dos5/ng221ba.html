@@ -1,0 +1,55 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>int 2fh / 0104h         hold print jobs and get status               dos 3.0+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>int 2fh / 0104h         hold print jobs and get status               dos 3.0+</b>">
+<title>int 2fh / 0104h         hold print jobs and get status               dos 3.0+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng220d7.html">[&lt;&lt;Previous Entry]</a> <a href="ng210fe.html">[^^Up^^]</a> <a href="ng2254a.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Int 2Fh / 0104h         Hold Print Jobs and Get Status               DOS 3.0+</B>
+
+    Stops the current print job and returns the address of the PRINT
+    queue.
+
+        <B>Entry</B>   AX = 0104h
+
+        <B>Return</B>  DX    = Error count
+                DS:SI = Pointer to print queue
+
+    ------------------------------------------------------------------
+
+    The print queue consists of a series of 64-byte entries, each
+    containing a zero-terminated string specifying the path of a file
+    in the queue. The first file in the list is the one currently
+    being printed. The last entry in the list consists of a single
+    null character.
+
+    Programs must <B>not</B> change the contents of the print queue. To add or
+    remove a file from the queue, use Int 2Fh functions 0101h or 0102h.
+
+    The print spooler continues to <B>hold</B> the current print job until
+    Int 2Fh function 0105h (Release Print Jobs) is called.
+</pre><hr><b>See Also:</b> <a href="ng21ddb.html">0101h</a> <a href="ng21fa2.html">0102h</a> <a href="ng2254a.html">0105h</a> <pre></pre>
+
+
+</html>
+

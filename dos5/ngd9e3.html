@@ -1,0 +1,52 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 4408h          does device use removeable media             dos 3.0+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 4408h          does device use removeable media             dos 3.0+</b>">
+<title>function 4408h          does device use removeable media             dos 3.0+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ngd752.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ngdcce.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 4408h          Does Device Use Removeable Media             DOS 3.0+</B>
+
+    Determines whether the specified device contains a removable
+    storage medium, such as a floppy disk.
+
+        <B>Entry</B>   AX = 4408h
+                BL = Drive number (0 = default, 1 = A, etc.)
+
+        <B>Return</B>  AX = 00h | 01h   Device is removable | fixed
+                or
+                AX = Error code, if CF is set
+                     | 01h Invalid function
+                     | 0Fh Invalid drive
+
+    ------------------------------------------------------------------
+
+    This function returns an error value of 01h (invalid function) for
+    a network drive or for a device that does not support the function
+    request. In these cases, the calling program should assume that
+    the storage medium is not removable.
+</pre><hr><b>See Also:</b> <a href="ngdcce.html">4409h</a> <a href="ng33cf3.html">Dev0Fh</a> <pre></pre>
+
+
+</html>
+

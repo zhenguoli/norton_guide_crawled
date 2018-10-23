@@ -1,0 +1,63 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 4b05h          set execution state                          dos 5.0+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 4b05h          set execution state                          dos 5.0+</b>">
+<title>function 4b05h          set execution state                          dos 5.0+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng165f8.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng16dfc.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 4B05h          Set Execution State                          DOS 5.0+</B>
+
+    Prepares a new program for execution. This preparation includes
+    setting the version number for the program as specified by the
+    SETVER command.
+
+        <B>Entry</B>   AX    = 4B05h
+                DS:DX = Pointer to an ExecState structure
+
+        <B>Return</B>  Nothing
+                or
+                AX = Error code, if CF is set
+                     | ??
+
+    ------------------------------------------------------------------
+
+    This function is required for programs that intercept function
+    4B00h (EXEC).
+
+    After the function returns, the calling program must transfer
+    execution control to the new program as soon as possible. In
+    particular, before starting the new program, the calling program
+    must not call DOS system functions, ROM BIOS functions, or system
+    interrupts.
+
+    When DOS is installed in the high-memory area (HMA), this function
+    turns off the A20 line, making the HMA inaccessible. If the new
+    program must have access to the HMA, the program must turn on the
+    A20 line. Note that MS-DOS automatically turns on the A20 line
+    (and usually leaves it on) when carrying out other system
+    functions.
+</pre><hr><b>See Also:</b> <a href="ng15656.html">4b00h</a> <a href="ng1618b.html">4b01h</a> <a href="ng3a146.html">ExecState</a> <pre></pre>
+
+
+</html>
+

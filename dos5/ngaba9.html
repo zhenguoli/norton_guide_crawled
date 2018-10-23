@@ -1,0 +1,65 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 4300h          get file attributes</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 4300h          get file attributes</b>">
+<title>function 4300h          get file attributes</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="nga2a0.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ngb028.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 4300h          Get File Attributes</B>
+
+    Returns the attributes for a specified file or directory.
+
+        <B>Entry</B>   AX    = 4300h
+                DS:DX = Pointer to filespec (ASCIIZ string)
+
+        <B>Return</B>  CX = File attributes
+                or
+                AX = Error code, if CF is set
+                     | 01h Invalid function
+                     | 02h File not found
+                     | 03h Path not found
+                     | 05h Access denied
+
+    ------------------------------------------------------------------
+
+    The file specification must be a valid DOS file name or directory
+    name and cannot contain wildcards.
+
+    The file attributes returned in the CX register can be a
+    combination (OR'ed) of the following values:
+
+        attr_normal     = 00h   File can be read from or written to
+        attr_readonly   = 01h   File can be read from but not written to
+        attr_hidden     = 02h   File/directory is hidden and does not
+                                appear in a directory listing
+        attr_system     = 04h   File/directory is a system file
+        attr_volume     = 08h   Filename is the current volume label
+                                for the media
+        attr_directory  = 10h   Filename identifies a directory,
+                                not a file
+        attr_archive    = 20h   File has been modified
+</pre><hr><b>See Also:</b> <a href="ngb028.html">4301h</a> <a href="ng19dc7.html">59h</a> <a href="ng3af21.html">File attributes</a> <pre></pre>
+
+
+</html>
+

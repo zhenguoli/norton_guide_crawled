@@ -1,0 +1,53 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - Norton Guide, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - Norton Guide">
+
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng38d75.html">[&lt;&lt;Previous Entry]</a> <a href="ng361d7.html">[^^Up^^]</a> <a href="ng393f8.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+
+struc DPB                       ; Drive parameter block
+ dpbDrive       db ?            ; Drive no. (0 = A, 1 = B, etc.)
+ dpbUnit        db ?            ; Unit no. (for device driver)
+ dpbSectorSize  dw ?            ; Sector size, in bytes
+ dpbClusterMask db ?            ; Sectors per cluster - 1
+ dpbClusterShift db ?           ; Sectors per cluster, as power of 2
+ dpbFirstFAT    dw ?            ; First sector containing FAT
+ dpbFATCount    db ?            ; No. of FATs
+ dpbRootEntries dw ?            ; No. of root-directory entries
+ dpbFirstSector dw ?            ; First sector of first cluster
+ dpbMaxCluster  dw ?            ; No. of clusters on drive + 1
+ dpbFATSize     dw ?            ; No. of sectors occupied by each FAT
+ dpbDirSector   dw ?            ; First sector containing root directory
+ dpbDriverAddr  dd ?            ; Addr of device driver's DeviceHeader
+ dpbMedia       db ?            ; Media descriptor
+ dpbFirstAccess db ?            ; 0FFh = medium in drive not accessed
+ dpbNextDPB     dd ?            ; Address of next drive parameter block
+ dpbNextFree    dw ?            ; Last allocated cluster
+ dpbFreeCnt     dw ?            ; No. of free clusters (0FFFFh = unknown)
+ends
+</pre><hr><b>See Also:</b> <a href="ng35d1.html">1Fh</a> <a href="ng5dd2.html">32h</a> <a href="ng378a9.html">DeviceHeader</a> <a href="ng3d57f.html">Media types</a> <pre></pre>
+
+
+</html>
+

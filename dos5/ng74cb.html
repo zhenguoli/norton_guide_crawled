@@ -1,0 +1,52 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 39h            create directory (mkdir)</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 39h            create directory (mkdir)</b>">
+<title>function 39h            create directory (mkdir)</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng6f6e.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng77c3.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 39h            Create Directory (MKDIR)</B>
+
+    Creates a subdirectory by using the specified path.
+
+        <B>Entry</B>   AH    = 39h
+                DS:DX = Pointer to ASCIIZ directory name
+
+        <B>Return</B>  AX = Error code, if CF is set
+                     | 03h Path not found
+                     | 05h Access denied (pathname exists)
+
+    ------------------------------------------------------------------
+
+    Function 39h creates a subdirectory whose path is specified in
+    the zero-terminated string at address DS:DX; the string length is
+    limited to 64 characters. The string must be a valid DOS directory
+    name; it may include a drive letter, but no wildcards.
+
+    If any of the parent directories in the path does not exist, the
+    directory is not created.
+</pre><hr><b>See Also:</b> <a href="ng77c3.html">3ah</a> <a href="ng7a79.html">3bh</a> <a href="ng142a8.html">47h</a> <a href="ng19dc7.html">59h</a> <pre></pre>
+
+
+</html>
+

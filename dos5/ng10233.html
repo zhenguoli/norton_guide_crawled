@@ -1,0 +1,53 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 440ch /7fh     get display mode                             dos 4.0+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 440ch /7fh     get display mode                             dos 4.0+</b>">
+<title>function 440ch /7fh     get display mode                             dos 4.0+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ngff76.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng104a1.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 440Ch /7fh     Get Display Mode                             DOS 4.0+</B>
+
+    Retrieves the display mode for the screen device.
+
+        <B>Entry</B>   AX    = 440Ch
+                BX    = Device handle
+                CH    = 03h (screen device category)
+                CL    = 7fh
+                DS:DX = Pointer to a DisplayMode structure
+
+        <B>Return</B>  DisplayMode filled
+                or
+                AX = Error code, if CF is set
+                     | 01h Invalid function
+                     | 05h Access denied
+                     | 06h Invalid handle
+
+    ------------------------------------------------------------------
+
+    This function returns 01h (invalid function) if the ANSI.SYS
+    driver has not been loaded.
+</pre><hr><b>See Also:</b> <a href="ngf8db.html">440Ch /5fh</a> <a href="ng2309b.html">1A00h</a> <a href="ng38d75.html">DisplayMode</a> <pre></pre>
+
+
+</html>
+

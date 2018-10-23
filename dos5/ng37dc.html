@@ -1,0 +1,51 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 25h            set interrupt vector</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 25h            set interrupt vector</b>">
+<title>function 25h            set interrupt vector</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng36e3.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng3a69.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 25h            Set Interrupt Vector</B>
+
+    Replaces the vector-table entry with the address of the specified
+    interrupt handler.
+
+        <B>Entry</B>   AH    = 25h
+                AL    = Interrupt number
+                DS:DX = Address of interrupt handler
+
+        <B>Return</B>  Nothing
+
+    ------------------------------------------------------------------
+                    
+    Programs should <U>never</U> set an interrupt handler by directly
+    manipulating the interrupt vector table.
+
+    When a program installs a new interrupt handler, it should use
+    function 35h to retrieve the address of the original interrupt
+    handler and restore this original address before terminating.
+</pre><hr><b>See Also:</b> <a href="ng6afc.html">35h</a> <pre></pre>
+
+
+</html>
+

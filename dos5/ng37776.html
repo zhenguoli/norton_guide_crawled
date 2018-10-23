@@ -1,0 +1,40 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - Norton Guide, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - Norton Guide">
+
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng375d8.html">[&lt;&lt;Previous Entry]</a> <a href="ng361d7.html">[^^Up^^]</a> <a href="ng378a9.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+
+struc CPPrepare
+ cppFlags       dw 0                    ; Flags (device-specific)
+ cppLength      dw (codepage_ids+1) * 2 ; Byte size of structure,
+                                        ;   excl. first two fields
+ cppIds         dw codepage_ids         ; No. of code pages in list
+ cppId          dw codepage_ids dup (?) ; Array of code pages
+ends
+</pre><hr><b>See Also:</b> <a href="ngf1eb.html">440Ch /4ch</a> <pre></pre>
+
+
+</html>
+

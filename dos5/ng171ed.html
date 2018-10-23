@@ -1,0 +1,58 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 4dh            get child-program return value</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 4dh            get child-program return value</b>">
+<title>function 4dh            get child-program return value</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng16dfc.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng175a5.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 4Dh            Get Child-Program Return Value</B>
+
+    Retrieves the return value specified by the last child program.
+    The child program must have specified a return value by using
+    either function 4ch (EXIT) or 31h (KEEP).
+
+        <B>Entry</B>   AH = 4Dh
+
+        <B>Return</B>  AL = Return value from child program
+                AH = Termination method
+                     | 00h   Normal termination
+                     | 01h   Terminated by Ctrl-C (Ctrl-Break)
+                     | 02h   Terminated by DOS because of
+                     |       critical device error
+                     | 03h   Terminated by function 31h
+
+    ------------------------------------------------------------------
+
+    <B>Note</B>
+    The return value for the program is available only once.
+    Subsequent calls to this function in relation to the same child
+    program give meaningless results.
+
+    If there is no child-program return value to retrieve, this
+    function does not return an error, and the information in the AX
+    register is meaningless.
+</pre><hr><b>See Also:</b> <a href="ng56df.html">31h</a> <a href="ng16dfc.html">4ch</a> <a href="ng15656.html">4b00h</a> <pre></pre>
+
+
+</html>
+

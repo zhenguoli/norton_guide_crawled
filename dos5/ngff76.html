@@ -1,0 +1,55 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 440ch /6bh     query code-page prepare list                 dos 3.3+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 440ch /6bh     query code-page prepare list                 dos 3.3+</b>">
+<title>function 440ch /6bh     query code-page prepare list                 dos 3.3+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ngfd74.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng10233.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 440Ch /6bh     Query Code-Page Prepare List                 DOS 3.3+</B>
+
+    Returns the list of currently prepared code pages for the
+    specified device.
+
+        <B>Entry</B>   AX    = 440Ch
+                BX    = Device handle
+                CH    = Device category:
+                        | 01h   Serial device
+                        | 03h   Console (screen)
+                        | 05h   Parallel printer
+                CL    = 6bh
+                DS:DX = Pointer to a CPList structure
+
+        <B>Return</B>  CPList filled
+                or
+                AX = Error code, if CF is set
+                     | ??
+
+    ------------------------------------------------------------------
+
+    The device driver may return up to 12 hardware code-page
+    identifiers and 12 prepared code-page identifiers.
+</pre><hr><b>See Also:</b> <a href="ngefd3.html">440Ch /4ah</a> <a href="ngf1eb.html">440Ch /4ch</a> <a href="ngf67f.html">440Ch /4dh</a> <a href="ngfd74.html">440Ch /6ah</a> <a href="ng375d8.html">CPList</a> <pre></pre>
+
+
+</html>
+

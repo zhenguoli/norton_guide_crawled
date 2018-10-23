@@ -1,0 +1,91 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 5ch            lock/unlock file                             dos 3.1+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 5ch            lock/unlock file                             dos 3.1+</b>">
+<title>function 5ch            lock/unlock file                             dos 3.1+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng1ad95.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng1ba85.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 5Ch            Lock/Unlock File                             DOS 3.1+</B>
+
+    Denies or allows access to the specified region in a file.
+
+        <B>Entry</B>   AH = 5Ch
+                AL    = 0 | 1   Lock | unlock a file
+                BX    = File handle
+                CX:DX = File offset of region
+                SI:DI = Length of region
+
+        <B>Return</B>  Nothing
+                or
+                AX = Error code, if CF is set
+                     | 01h Invalid function code
+                     | 06h Invalid handle
+                     | 21h Lock violation
+                     | 24h Sharing buffer overflow
+
+    ------------------------------------------------------------------
+
+    This function is used to lock or unlock a selected portion of a
+    file, preventing or allowing access to that region by other
+    processes in a multitasking or networking environment.
+
+
+    File sharing must be loaded (by running the SHARE program) before
+    this function can be used on a local computer.
+
+    This function returns an error value of 21h (lock violation) if
+    all or part of the specified region is already locked or if the
+    specified region is not identical to a region previously locked by
+    the same procedure.
+
+    If another program attempts to write to or read from a locked
+    region, DOS retries the operation one or more times; if all
+    retries fail, DOS issues an interrupt 24h for the requesting
+    program. A program can set the number of retries by using function
+    440bh.
+
+    The locked region can be anywhere in a file. For example, locking
+    beyond the end of the file is not an error. Functions 45h (DUP)
+    and 46h (FORCEDUP) duplicate access to any locked regions. Passing
+    an open file to a child program by using function 4b00h (EXEC)
+    does <B>not</B> duplicate access to locked regions.
+
+    Programs should not depend on being denied access to a locked
+    region. To determine the status of a region (locked or unlocked),
+    a program can attempt to lock the region and then examine the
+    error value.
+
+
+    <B>Note</B>
+    File locks should be released before terminating a program.
+
+    Use this function in the following file modes:
+                Deny read sharing mode
+                Deny none sharing mode
+                Deny write sharing mode, and file opened for read/write
+                Deny write sharing mode, and file opened for write only
+</pre><hr><b>See Also:</b> <a href="nge810.html">440bh</a> <a href="ng136fa.html">45h</a> <a href="ng13c94.html">46h</a> <a href="ng15656.html">4b00h</a> <a href="ng28dea.html">Int 24h</a> <a href="ng8416.html">3dh</a> <a href="ng901e.html">3eh</a> <a href="ng19dc7.html">59h</a> <a href="ng228c2.html">1000h</a> <pre></pre>
+
+
+</html>
+

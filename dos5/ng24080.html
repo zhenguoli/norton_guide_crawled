@@ -1,0 +1,51 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>int 2fh / 4300h         get himem.sys installed state                dos 5.0+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>int 2fh / 4300h         get himem.sys installed state                dos 5.0+</b>">
+<title>int 2fh / 4300h         get himem.sys installed state                dos 5.0+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng2309b.html">[&lt;&lt;Previous Entry]</a> <a href="ng210fe.html">[^^Up^^]</a> <a href="ng2437c.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Int 2Fh / 4300h         Get HIMEM.SYS Installed State                DOS 5.0+</B>
+
+    Determines whether an extended-memory manager (HIMEM.SYS) has been
+    loaded.
+
+        <B>Entry</B>   AX = 4300h
+
+        <B>Return</B>  AL = 80h | 00h   XMS-driver loaded | not loaded
+
+
+    The HIMEM.SYS driver provides a set of functions that programs use
+    to independently manage extended memory. Although programs can
+    also use these functions to manage the high memory area (HMA) and
+    upper memory blocks (UMBs), programs should <U>not</U> do so if DOS
+    already manages these areas.
+
+    This function returns the installed state of any extended-memory
+    manager as long as the manager conforms to the Lotus/Intel/
+    Microsoft/AST eXtended Memory Specification (XMS) version 2.0.
+</pre><hr><b>See Also:</b> <a href="ng2437c.html">4310h</a> <pre></pre>
+
+
+</html>
+

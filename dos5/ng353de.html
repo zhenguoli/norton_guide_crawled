@@ -1,0 +1,66 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>device driver function 17h      get logical device      b</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>device driver function 17h      get logical device      b</b>">
+<title>device driver function 17h      get logical device      b</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng348de.html">[&lt;&lt;Previous Entry]</a> <a href="ng2c72e.html">[^^Up^^]</a> <a href="ng3592f.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Device driver function 17h      Get Logical Device      b</B>
+
+    Get Logical Device returns the active drive number for the
+    specified drive.
+
+    This function is used for block device drivers only.
+
+    ------------------------------------------------------------------
+
+    DOS calls this function only if bit 6 is set in the dhAttributes
+    field of the DeviceHeader structure for the driver.
+
+    ------------------------------------------------------------------
+
+    <B>ldrUnit</B>
+    Contains the device number to check and receives the active drive
+    number.
+
+        input   Specifies the drive number to check. The driver must
+                determine whether the unit associated with this drive
+                number has any other logical-device numbers.
+
+        output  Specifies the active drive number (1 = A, 2 = B, 3 = C
+                etc.). The driver must set this field to the drive
+                number set by the most recent call to Set Logical
+                Device (device driver function 18h) or to zero if the
+                specified drive has no other logical-drive numbers.
+
+
+    <B>ldrStatus</B>
+    Specifies the status of the completed function. If the function
+    was successful, the driver must set the done bit (bit 8).
+    Otherwise, the driver must set both the error and done bits (bits
+    15 and 8) and copy an error value to the low-order byte.
+</pre><hr><b>See Also:</b> <a href="ng3d3fc.html">LogDeviceRequest</a> <a href="ng3592f.html">Dev18h</a> <a href="ng12589.html">440Eh</a> <a href="ng378a9.html">DeviceHeader</a> <a href="ng2ca0f.html">Dev*</a> <pre></pre>
+
+
+</html>
+

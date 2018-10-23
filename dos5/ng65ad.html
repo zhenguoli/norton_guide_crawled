@@ -1,0 +1,53 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 3306h          get ms-dos version                           dos 5.0+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 3306h          get ms-dos version                           dos 5.0+</b>">
+<title>function 3306h          get ms-dos version                           dos 5.0+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng6398.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng689f.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 3306h          Get MS-DOS Version                           DOS 5.0+</B>
+
+    Returns the MS-DOS version number (unmodified by SETVER), revision
+    number, and version flags.
+
+        <B>Entry</B>   AX = 3306h
+
+        <B>Return</B>  BL = Major version number
+                BH = Minor version number (e.g. 02h for version 6.2)
+                DL = Bits 0-2 = revision number
+                     other bits reserved (0)
+                DH = DOS version flags:
+                     bit 3:  1=DOS runs in ROM, 0=DOS runs in RAM
+                     bit 4:  1=DOS is in high memory area (HMA)
+                             0=DOS is in conventional memory
+                     other bits reserved (0)
+
+    ------------------------------------------------------------------
+
+    This function returns the actual DOS version number rather than the
+    version number set by the SETVER command, if any, for the program.
+</pre><hr><b>See Also:</b> <a href="ng5299.html">30h</a> <pre></pre>
+
+
+</html>
+

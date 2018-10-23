@@ -1,0 +1,63 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 5bh            create new file                              dos 3.0+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 5bh            create new file                              dos 3.0+</b>">
+<title>function 5bh            create new file                              dos 3.0+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng1a846.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng1b1df.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 5Bh            Create New File                              DOS 3.0+</B>
+
+    Creates the specified file, if the file does not already exist.
+
+        <B>Entry</B>   AH    = 5Bh
+                CX    = File attributes
+                DS:DX = Pointer to ASCIIZ filename
+
+        <B>Return</B>  AX = File handle
+                or
+                AX = Error code, if CF is set
+                     | 03h Path not found
+                     | 04h No handle available
+                     | 05h Access denied
+                     | 50h File exists
+
+    ------------------------------------------------------------------
+
+    The filename parameter must be a valid DOS filename and cannot
+    contain wildcards.
+    The file attributes parameter can be a combination of:
+    attr_normal, attr_readonly, attr_hidden, attr_system, attr_archive.
+
+
+    This function will create a file and assign it the first available
+    file handle. If the specified already exists, this function fails.
+
+    When DOS creates a file, it opens it with read-and-write access
+    and compatibility sharing mode and sets the file pointer to zero.
+    If the attr_readonly attribute is specified, it takes affect only
+    after the new file is closed.
+</pre><hr><b>See Also:</b> <a href="ng7d90.html">3ch</a> <a href="ng1a846.html">5ah</a> <a href="ng1ff99.html">6ch</a> <a href="ng19dc7.html">59h</a> <a href="ng3af21.html">File attributes</a> <pre></pre>
+
+
+</html>
+

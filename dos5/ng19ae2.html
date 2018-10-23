@@ -1,0 +1,54 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 5803h          set upper-memory link                        dos 5.0+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 5803h          set upper-memory link                        dos 5.0+</b>">
+<title>function 5803h          set upper-memory link                        dos 5.0+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng199a5.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng19dc7.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 5803h          Set Upper-Memory Link                        DOS 5.0+</B>
+
+    Links or unlinks the upper memory area. When this area is linked,
+    a program can allocate memory from it.
+
+        <B>Entry</B>   AX = 5803h
+                BX = 00h | 01h   link | unlink upper memory area
+
+        <B>Return</B>  Nothing
+                or
+                AX = Error code, if CF is set
+                     | 01h Invalid function
+                     | 07h Memory blocks destroyed
+
+    ------------------------------------------------------------------
+
+    If this function returns an error value of 1 (invalid function),
+    DOS has been loaded without the command "DOS=UMB" having been
+    specified in the CONFIG.SYS file.
+
+    A program that changes the upper-memory link state should restore
+    its original state before terminating.
+</pre><hr><b>See Also:</b> <a href="ng199a5.html">5802h</a> <pre></pre>
+
+
+</html>
+

@@ -1,0 +1,42 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>int 2fh / 0106h         get printer device                           dos 3.3+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>int 2fh / 0106h         get printer device                           dos 3.3+</b>">
+<title>int 2fh / 0106h         get printer device                           dos 3.3+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng2254a.html">[&lt;&lt;Previous Entry]</a> <a href="ng210fe.html">[^^Up^^]</a> <a href="ng227c2.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Int 2Fh / 0106h         Get Printer Device                           DOS 3.3+</B>
+
+    Returns the address of the device header for the current printer.
+
+        <B>Entry</B>   AX = 0106h
+
+        <B>Return</B>  Carry clear, AX = 00h   Print queue is empty
+                or
+                Carry set, AX = 08h
+                DS:SI = Pointer to a DeviceHeader structure
+</pre><hr><b>See Also:</b> <a href="ng378a9.html">DeviceHeader</a> <pre></pre>
+
+
+</html>
+

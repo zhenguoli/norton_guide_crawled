@@ -1,0 +1,47 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - Norton Guide, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - Norton Guide">
+
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng3ebcd.html">[&lt;&lt;Previous Entry]</a> <a href="ng361d7.html">[^^Up^^]</a> <a href="ng3ef47.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+
+struc ReadWriteRequest          ; Device-Driver functions 04h, 08h, 09h
+ rwrLength      db ?            ; Length of structure, in bytes
+ rwrUnit        db ?            ; Unit number (block device only)
+ rwrFunction    db ?            ; Function number (04h, 08h, or 09h)
+ rwrStatus      dw ?            ; Status
+ rwrReserved    db 8 dup (?)    ; Reserved
+ rwrMediaID     db ?            ; INPUT:  media descriptor
+ rwrBuffer      dd ?            ; INPUT:  buffer address
+ rwrBytesSec    dw ?            ; INPUT:  no. of bytes/sectors to r/w
+                                ; OUTPUT: no. of bytes/sectors r/w
+ rwrStartSec    dw ?            ; INPUT:  starting sector number
+ rwrVolumeID    dd ?            ; OUTPUT: volume identifier
+ rwrHugeStartSec dd ?           ; INPUT:  32-bit starting-sector number
+ends                            ; = 30d bytes
+</pre><hr><b>See Also:</b> <a href="ng303d6.html">Dev04h</a> <a href="ng31963.html">Dev08h</a> <a href="ng324b6.html">Dev09h</a> <a href="ng3d57f.html">Media</a> <pre></pre>
+
+
+</html>
+

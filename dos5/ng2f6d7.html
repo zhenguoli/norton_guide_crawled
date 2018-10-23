@@ -1,0 +1,80 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>device driver function 02h      build bpb               b</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>device driver function 02h      build bpb               b</b>">
+<title>device driver function 02h      build bpb               b</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng2edb5.html">[&lt;&lt;Previous Entry]</a> <a href="ng2c72e.html">[^^Up^^]</a> <a href="ng2fe02.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Device driver function 02h      Build BPB               B</B>
+
+    Build BPB returns a <B>BPB</B> structure for the medium in the
+    specified drive. DOS calls this function whenever Media Check
+    (device driver function 01h) specifies that the medium has changed
+    or that it might have been changed and no disk-write operations
+    are pending.
+
+    This function is required for block device drivers.
+
+    ------------------------------------------------------------------
+
+    If the driver supports removable media, Build BPB should read the
+    volume label from the disk and save it.
+
+    ------------------------------------------------------------------
+
+    <B>bbrUnit</B>
+    Specifies the unit for which to return the BPB structure.
+
+
+    <B>bbrStatus</B>
+    Specifies the status of the completed function. If the function
+    was successful, the driver must set the done bit (bit 8).
+    Otherwise, the driver must set both the error and done bits (bits
+    15 and 8) and copy an error value to the low-order byte.
+
+
+    <B>bbrMediaID</B>
+    Specifies the media descriptor for the medium DOS assumes is in
+    the drive.
+    - See Media
+
+
+    <B>bbrFATSector</B>
+    Contains the 32-bit address of a buffer. The contents of the
+    buffer depend on bit 13 in the dhAttributes field in the driver's
+    DeviceHeader structure. If bit 13 is zero, the buffer contains the
+    first sector of the first FAT on the disk; the driver uses the
+    first byte in this buffer to determine the disk's media
+    descriptor. In this case, the driver must not alter this buffer.
+    If bit 13 is set, the contents of the buffer are meaningless and
+    the driver may use the buffer as scratch space.
+
+
+    <B>bbrBPBAddress</B>
+    Receives the 32-bit address of the BPB structure for the medium in
+    the drive.
+</pre><hr><b>See Also:</b> <a href="ng37053.html">BuildBPBRequest</a> <a href="ng36ddb.html">BPB</a> <a href="ng2edb5.html">Dev01h</a> <a href="ng10650.html">440Dh /40h</a> <a href="ng114ef.html">440Dh /60h</a> <a href="ng3d57f.html">Media</a> <a href="ng2ca0f.html">Dev*</a> <pre></pre>
+
+
+</html>
+

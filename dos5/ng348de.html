@@ -1,0 +1,115 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>device driver function 13h      generic ioctl           b   c</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>device driver function 13h      generic ioctl           b   c</b>">
+<title>device driver function 13h      generic ioctl           b   c</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng340ce.html">[&lt;&lt;Previous Entry]</a> <a href="ng2c72e.html">[^^Up^^]</a> <a href="ng353de.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Device driver function 13h      Generic IOCTL           b   c</B>
+
+    Generic IOCTL directs the driver to carry out the generic input-
+    and-output-control function specified by the giCategory and
+    giMinorCode fields.
+
+    This function can be used both for block and character device
+    drivers.
+
+    ------------------------------------------------------------------
+
+    The driver must interpret the category and minor codes to
+    determine which operation to carry out and then return any
+    applicable information in the structure pointed to by the
+    giIOCTLData field.
+
+    DOS calls this function only if bit 6 is set in the dhAttributes
+    field of the DeviceHeader structure for the driver.
+
+    ------------------------------------------------------------------
+
+    <B>giUnit</B>
+    Specifies the device number on which to carry out the IOCTL
+    function. This field is used for block device drivers only.
+
+
+    <B>giStatus</B>
+    Specifies the status of the completed function. If the function
+    was successful, the driver must set the done bit (bit 8).
+    Otherwise, the driver must set both the error and done bits (bits
+    15 and 8) and copy an error value to the low-order byte.
+
+
+    <B>giCategory</B>
+    Specifies the device category. Serial, console, parallel, and disk
+    drivers are represented by the following values:
+
+                01h     Serial device
+                03h     Console (display)
+                05h     Parallel printer
+                08h     Disk
+
+    If the driver supports a type of device not listed, the field must
+    specify an 8-bit number that uniquely identifies the device. The
+    driver must check this value.
+
+
+    <B>giMinorCode</B>
+    Specifies the minor code for Interrupt 21h function 440Ch, Generic
+    IOCTL for Character Devices. The meaning of the minor code depends
+    on the device category.
+    For serial, console, and parallel drivers, it can be one of the
+    following:
+
+                45h     Set Iteration Count
+                4ah     Select Code Page
+                4ch     Start Code-Page Prepare
+                4dh     End Code-Page Prepare
+                65h     Get Iteration Count
+                6ah     Query Selected Code Page
+                6bh     Query Code-Page Prepare List
+
+    For disk drivers, the value specifies the minor code for Interrupt
+    21h function 440Dh, Generic IOCTL for Block Devices. It can be one
+    of the following:
+
+                40h     Set Device Parameters
+                41h     Write Track on Logical Device
+                42h     Format Track on Logical Device
+                46h     Set Media ID
+                60h     Get Device Parameters
+                61h     Read Track on Logical Device
+                62h     Verify Track on Logical Device
+                66h     Get Media ID
+                68h     Sense Media Type
+
+    Drivers can support additional minor codes as needed.
+
+
+    <B>giIOCTLData</B>
+    Contains a 32-bit address of the structure associated with the
+    specified IOCTL function. The structure type and contents depend
+    on the minor code as specified by the giMinorCode field.
+</pre><hr><b>See Also:</b> <a href="ng3c6b5.html">IOCTLRequest</a> <a href="ng35cdd.html">Dev19h</a> <a href="ngec05.html">440Ch</a> <a href="ng104a1.html">440Dh</a> <a href="ng378a9.html">DeviceHeader</a> <a href="ng2ca0f.html">Dev*</a> <pre></pre>
+
+
+</html>
+

@@ -1,0 +1,56 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 0ch            flush buffer, read keyboard</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 0ch            flush buffer, read keyboard</b>">
+<title>function 0ch            flush buffer, read keyboard</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng22b8.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng2896.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 0Ch            Flush Buffer, Read Keyboard</B>
+
+    Removes any characters in the standard input buffer, then invokes
+    the specified function.
+
+        <B>Entry</B>   AH = 0Ch
+                AL = Function to be invoked (06h, 07h, 08h)
+                     (0Ah may not be used, 01h may be used but is
+                      superseded)
+
+        <B>Return</B>  AL = Return value from function
+                     (zero if invalid function)
+
+    ------------------------------------------------------------------
+
+    This function clears the keyboard buffer, then invokes a DOS
+    service (specified in AL). The purpose is to ensure that your
+    program receives new input before it performs the followup
+    function.
+
+
+    <B>Note</B>
+    If used to call function 06h, this function must pass 0FFh in the
+    DL register; it cannot be used to write a character.
+</pre><hr><b>See Also:</b> <a href="ng1878.html">06h</a> <a href="ng1ce0.html">07h</a> <a href="ng1f82.html">08h</a> <pre></pre>
+
+
+</html>
+

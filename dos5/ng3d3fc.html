@@ -1,0 +1,41 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - Norton Guide, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - Norton Guide">
+
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng3d274.html">[&lt;&lt;Previous Entry]</a> <a href="ng361d7.html">[^^Up^^]</a> <a href="ng3d57f.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+
+struc LogDeviceRequest          ; Device-Driver functions 17h, 18h
+ ldrLength      db ?            ; Length of structure, in bytes
+ ldrUnit        db ?            ; INPUT:  unit number for drive to check
+                                ; OUTPUT: active drive number
+ ldrFunction    db ?            ; Function number (17h or 18h)
+ ldrStatus      dw ?            ; Status
+ ldrReserved    db 8 dup (?)    ; Reserved
+ends                            ; = 13d bytes
+</pre><hr><b>See Also:</b> <a href="ng353de.html">Dev17h</a> <a href="ng3592f.html">Dev18h</a> <pre></pre>
+
+
+</html>
+

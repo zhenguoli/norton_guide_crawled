@@ -1,0 +1,49 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 34h            get indos flag address</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 34h            get indos flag address</b>">
+<title>function 34h            get indos flag address</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng65ad.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng6afc.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 34h            Get InDOS Flag Address</B>
+
+    Returns the address of the InDOS flag.
+
+        <B>Entry</B>   AH = 34h
+
+        <B>Return</B>  ES:BX = Address of InDOS flag
+
+    ------------------------------------------------------------------
+
+    While DOS is processing an interrupt 21h function, the value of
+    the InDOS flag is non-zero.
+
+    With DOS 5.0, function 34h has been documented for DOS version
+    2.0 and later. The DOS 5.0 Programmer's Reference also documents
+    that the address of the ErrorMode flag can be determined by
+    subtracting 1 (one) from the InDOS flag address.
+</pre><hr><b>See Also:</b> <a href="ng28dea.html">Int 24h</a> <pre></pre>
+
+
+</html>
+

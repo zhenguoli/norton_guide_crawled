@@ -1,0 +1,52 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 3bh            change current directory (chdir)</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 3bh            change current directory (chdir)</b>">
+<title>function 3bh            change current directory (chdir)</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng77c3.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng7d90.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 3Bh            Change Current Directory (CHDIR)</B>
+
+    Changes the current directory to a specified path.
+
+        <B>Entry</B>   AH    = 3Bh
+                DS:DX = Pointer to ASCIIZ name of new default directory
+
+        <B>Return</B>  AX = Error code, if CF is set
+                     | 03h Path not found
+
+    ------------------------------------------------------------------
+
+    Function 3Bh changes the current directory to the directory whose
+    path is specified in the ASCIIZ string at address DS:DX; the
+    string length is limited to 64 characters.
+
+    The path name may include a drive letter. If a drive other than
+    the default drive is specified as part of the new directory path,
+    this function changes the current directory on that drive but does
+    not change the default drive.
+</pre><hr><b>See Also:</b> <a href="ng2aef.html">0eh</a> <a href="ng142a8.html">47h</a> <a href="ng19dc7.html">59h</a> <pre></pre>
+
+
+</html>
+

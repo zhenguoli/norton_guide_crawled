@@ -1,0 +1,55 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 5f04h           delete network connection                   dos 3.1+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 5f04h           delete network connection                   dos 3.1+</b>">
+<title>function 5f04h           delete network connection                   dos 3.1+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng1c990.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng1d43c.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 5F04h           Delete Network Connection                   DOS 3.1+</B>
+
+    Deletes the connection to the network device and restores the
+    redirected local device or drive.
+
+        <B>Entry</B>   AX    = 5F04h
+                DS:SI = Pointer to ASCIIZ local device name or path
+
+        <B>Return</B>  Nothing
+                or
+                AX = Error code, if CF is set
+                     | 01h Invalid function (Network not running)
+                     | 0Fh Invalid drive
+
+    The string at DS:SI can specify one of the following:
+    - The letter of a redirected drive, followed by a colon. DOS
+      cancels the redirection and restores the drive to its physical
+      meaning.
+    - The name of a redirected printer (PRN, LPT1, LPT2, LPT3, or
+      their machine-specific equivalents). DOS cancels the redirection
+      and restores the printer name to its physical meaning.
+    - A string starting with two backslashes (\\). DOS terminates the
+      connection between the local computer and the network directory.
+</pre><hr><b>See Also:</b> <a href="ng1c35c.html">5f02h</a> <a href="ng1c990.html">5f03h</a> <a href="ng19dc7.html">59h</a> <a href="ng22b46.html">1100h</a> <pre></pre>
+
+
+</html>
+

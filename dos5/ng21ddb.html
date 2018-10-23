@@ -1,0 +1,50 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>int 2fh / 0101h         add file to queue                            dos 3.0+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>int 2fh / 0101h         add file to queue                            dos 3.0+</b>">
+<title>int 2fh / 0101h         add file to queue                            dos 3.0+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng21cde.html">[&lt;&lt;Previous Entry]</a> <a href="ng210fe.html">[^^Up^^]</a> <a href="ng21fa2.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Int 2Fh / 0101h         Add File to Queue                            DOS 3.0+</B>
+
+    Adds a file to the PRINT queue.
+
+        <B>Entry</B>   AX    = 0101h
+                DS:DX = Pointer to a QueuePacket structure
+
+        <B>Return</B>  Nothing
+                or
+                AX = Error code, if CF is set
+                     | 01h Invalid function
+                     | 02h File not found
+                     | 03h Path not found
+                     | 04h No handle available
+                     | 05h Access denied
+                     | 08h Queue full
+                     | 0Ch Invalid access
+                     | 0Dh Invalid drive
+</pre><hr><b>See Also:</b> <a href="ng21fa2.html">0102h</a> <a href="ng3ebcd.html">QueuePacket</a> <pre></pre>
+
+
+</html>
+

@@ -1,0 +1,59 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 5700h          get file date and time</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 5700h          get file date and time</b>">
+<title>function 5700h          get file date and time</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng1862a.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng18d11.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 5700h          Get File Date and Time</B>
+
+    Returns the time and date a file was last modified (the last time
+    its directory entry was updated).
+
+        <B>Entry</B>   AX = 5700h
+                BX = File handle
+
+        <B>Return</B>  CX = Time
+                DX = Date
+                or
+                AX = Error code, if CF is set
+                     | 06h Invalid handle
+
+    ------------------------------------------------------------------
+
+    The values in CX and DX have the following format:
+
+                <B>Bits    Contents</B>
+        CX      0-4     Seconds divided by 2
+                5-10    Minutes (0-59)
+                11-15   Hours (0-23 on a 24-hour clock)
+
+        DX      0-4     Day of month (1-31)
+                5-8     Month (1 = January, 2 = February, etc.)
+                9-15    Year offset from 1980
+                        (add 1980 to get actual year)
+</pre><hr><b>See Also:</b> <a href="ng18d11.html">5701h</a> <pre></pre>
+
+
+</html>
+

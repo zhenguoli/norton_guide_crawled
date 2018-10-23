@@ -1,0 +1,63 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 4b01h          load program</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 4b01h          load program</b>">
+<title>function 4b01h          load program</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng15656.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng165f8.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 4B01h          Load Program</B>
+
+    Loads a program into memory and creates a new program segment
+    prefix (PSP), but does not transfer control to the new program.
+
+        <B>Entry</B>   AX    = 4B01h
+                DS:DX = Pointer to ASCIIZ program name (.COM or .EXE)
+                ES:BX = Pointer to a Load structure
+
+        <B>Return</B>  Expect all registers to be changed, except CS:IP
+                AX = Error code, if CF is set
+                     | 01h Invalid function number
+                     | 02h File not found
+                     | 03h Path not found
+                     | 04h No handle available
+                     | 05h Access denied
+                     | 08h Insufficient memory
+                     | 0Ah Invalid environment
+                     | 0Bh Invalid format
+
+    ------------------------------------------------------------------
+
+    Before function 4B01h is invoked, DS:DX must point to a zero-
+    terminated string that specifies the program to load. The program
+    name must be a valid DOS filename, and the file must be a valid
+    .COM or .EXE program. ES:BX must point to a Load structure.
+
+    There must be enough free memory for DOS to load the program file.
+
+
+    Function 4b01h was undocumented prior to the release of DOS 5.0.
+</pre><hr><b>See Also:</b> <a href="ng15656.html">4b00h</a> <a href="ng165f8.html">4b03h</a> <a href="ng16969.html">4b05h</a> <a href="ng3e6e1.html">PSP</a> <a href="ng3caac.html">Load</a> <pre></pre>
+
+
+</html>
+

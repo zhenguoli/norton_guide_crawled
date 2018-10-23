@@ -1,0 +1,64 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 4301h          set file attributes</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 4301h          set file attributes</b>">
+<title>function 4301h          set file attributes</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ngaba9.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ngb40a.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 4301h          Set File Attributes</B>
+
+    Sets the attributes for a specified file or directory.
+
+        <B>Entry</B>   AX    = 4301h
+                CX    = Desired attributes
+                DS:DX = Pointer to filespec (ASCIIZ string)
+
+        <B>Return</B>  AX = Error code, if CF is set
+                     | 01h Invalid function code
+                     | 02h File not found
+                     | 03h Path not found
+                     | 05h Access denied
+
+    ------------------------------------------------------------------
+
+    The file specification must be a valid DOS file name or directory
+    name and cannot contain wildcards.
+
+    The file attributes in the CX register can be a combination
+    (OR'ed) of the following values:
+
+                attr_normal     = 00h
+                attr_readonly   = 01h
+                attr_hidden     = 02h
+                attr_system     = 04h
+                attr_archive    = 20h
+
+    Only attr_hidden and attr_system are meaningful for directories.
+
+    Bits 6 and 7 of the attribute byte are reserved and must be zero
+    (values larger than 3Fh should not be specified).
+</pre><hr><b>See Also:</b> <a href="ngaba9.html">4300h</a> <a href="ng7d90.html">3ch</a> <a href="ng1ff99.html">6ch</a> <a href="ng19dc7.html">59h</a> <a href="ng3af21.html">File attributes</a> <pre></pre>
+
+
+</html>
+

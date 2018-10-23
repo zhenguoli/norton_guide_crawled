@@ -1,0 +1,49 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 0dh            reset drive</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 0dh            reset drive</b>">
+<title>function 0dh            reset drive</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng256f.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng2aef.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 0Dh            Reset Drive</B>
+
+    Flushes all file buffers. Any write operations that are buffered
+    by DOS are performed, and all waiting data is written to the
+    appropriate drive.
+
+        <B>Entry</B>   AH = 0Dh
+
+        <B>Return</B>  Nothing
+
+    ------------------------------------------------------------------
+
+    Reset Drive does not update directory entries; programs must close
+    changed files to ensure that the proper length of a changed file
+    is recorded in the disk directory.
+
+    This function is normally used by Ctrl-C interrupt handlers.
+</pre><hr><b>See Also:</b> <a href="ng901e.html">3eh</a> <a href="ng136fa.html">45h</a> <a href="ng1fcb1.html">68h</a> <a href="ng27979.html">Int 23h</a> <pre></pre>
+
+
+</html>
+

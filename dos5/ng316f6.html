@@ -1,0 +1,46 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>device driver function 07h      input flush                 c</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>device driver function 07h      input flush                 c</b>">
+<title>device driver function 07h      input flush                 c</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng312c0.html">[&lt;&lt;Previous Entry]</a> <a href="ng2c72e.html">[^^Up^^]</a> <a href="ng31963.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Device driver function 07h      Input Flush                 C</B>
+
+    Input Flush terminates any read operations in progress and empties
+    the device input buffer.
+
+    This function is required for character device drivers only.
+
+    ------------------------------------------------------------------
+
+    <B>frStatus</B>
+    Specifies the status of the completed function. If the function
+    was successful, the driver must set the done bit (bit 8).
+    Otherwise, the driver must set both the error and done bits (bits
+    15 and 8) and copy an error value to the low-order byte.
+</pre><hr><b>See Also:</b> <a href="ng3ba2e.html">FlushRequest</a> <a href="ng32866.html">Dev0Bh</a> <a href="ng256f.html">0Ch</a> <a href="ng2ca0f.html">Dev*</a> <pre></pre>
+
+
+</html>
+

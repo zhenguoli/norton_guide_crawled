@@ -1,0 +1,43 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - Norton Guide, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - Norton Guide">
+
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng3f96e.html">[&lt;&lt;Previous Entry]</a> <a href="ng361d7.html">[^^Up^^]</a> <a href="ng3fcbb.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+
+struc SwVersion
+ svsAPIMajor            dw ?    ; Protocol supported major version
+ svsAPIMinor            dw ?    ; Protocol supported minor version
+ svsProductMajor        dw ?    ; Task switcher's major version
+ svsProductMinor        dw ?    ; Task switcher's minor version
+ svsSwitcherID          dw ?    ; Task switcher identifier
+ svsFlags               dw ?    ; Operation flags (bit 0: switcher active)
+ svsName                dd ?    ; Points to task switcher name (ASCIIZ)
+ svsPrevSwitcher        dd ?    ; Previous task switcher's entry address
+ends                            ; = 20d bytes
+</pre><hr><b>See Also:</b> <a href="ng254b1.html">4B02h</a> <pre></pre>
+
+
+</html>
+

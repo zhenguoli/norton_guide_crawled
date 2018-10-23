@@ -1,0 +1,60 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 5701h          set file date and time</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 5701h          set file date and time</b>">
+<title>function 5701h          set file date and time</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng18a4a.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng18fe9.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 5701h          Set File Date and Time</B>
+
+    Sets the time and date for a file, replacing the time and date set
+    for the file when it was last modified.
+
+        <B>Entry</B>   AX = 5701h
+                BX = File handle
+                CX = Time
+                DX = Date
+
+        <B>Return</B>  Nothing
+                or
+                AX = Error code, if CF is set
+                     | 06h Invalid handle
+
+    ------------------------------------------------------------------
+
+    The values in CX and DX have the following format:
+
+                <B>Bits    Contents</B>
+        CX      0-4     Seconds divided by 2
+                5-10    Minutes (0-59)
+                11-15   Hours (0-23 on a 24-hour clock)
+
+        DX      0-4     Day of month (1-31)
+                5-8     Month (1 = January, 2 = February, etc.)
+                9-15    Year offset from 1980
+                        (add 1980 to get actual year)
+</pre><hr><b>See Also:</b> <a href="ng18a4a.html">5700h</a> <pre></pre>
+
+
+</html>
+

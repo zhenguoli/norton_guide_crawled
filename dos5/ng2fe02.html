@@ -1,0 +1,77 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>device driver function 03h      ioctl read              b   c</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>device driver function 03h      ioctl read              b   c</b>">
+<title>device driver function 03h      ioctl read              b   c</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng2f6d7.html">[&lt;&lt;Previous Entry]</a> <a href="ng2c72e.html">[^^Up^^]</a> <a href="ng303d6.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Device driver function 03h      IOCTL Read              b   c</B>
+
+    IOCTL Read transfers data from a device driver into the specified
+    buffer.
+
+    This function can be used for both block and character device
+    drivers.
+
+    ------------------------------------------------------------------
+
+    DOS calls this function only if bit 14 is set in the dhAttributes
+    field of the DeviceHeader structure for the driver.
+
+    The format of the returned data is device-specific and does not
+    follow any standard.
+
+    ------------------------------------------------------------------
+
+    <B>irwrUnit</B>
+    Specifies the device from which data is to be read. This field is
+    used for block device drivers only.
+
+
+    <B>irwrStatus</B>
+    Specifies the status of the completed function. If the function
+    was successful, the driver must set the done bit (bit 8).
+    Otherwise, the driver must set both the error and done bits (bits
+    15 and 8) and copy an error value to the low-order byte.
+
+
+    <B>irwrBuffer</B>
+    Contains the 32-bit address of the buffer that receives data read
+    from the device.
+
+
+    <B>irwrBytes</B>
+    Contains the number of bytes to read and receives the number of
+    bytes read.
+
+        input   Specifies the number of bytes to read. This number
+                must not exceed the size, in bytes, of the specified
+                buffer.
+
+        output  Specifies the number of bytes read. This number cannot
+                exceed the requested number of bytes.
+</pre><hr><b>See Also:</b> <a href="ng3c8ac.html">IOCTLRWRequest</a> <a href="ng32acf.html">Dev0Ch</a> <a href="ngca5c.html">4402h</a> <a href="ngd13b.html">4404h</a> <a href="ng378a9.html">DeviceHeader</a> <a href="ng2ca0f.html">Dev*</a> <pre></pre>
+
+
+</html>
+

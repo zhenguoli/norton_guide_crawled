@@ -1,0 +1,51 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 2eh            set/reset verify flag</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 2eh            set/reset verify flag</b>">
+<title>function 2eh            set/reset verify flag</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng4cd7.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng513b.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 2Eh            Set/Reset Verify Flag</B>
+
+    Turns the write verify flag on or off.
+
+        <B>Entry</B>   AH = 2Eh
+                AL = 0 | 1   Turn VERIFY off | on
+                DL = 0       (DOS 1.x/2.x only)
+
+        <B>Return</B>  Nothing
+
+    ------------------------------------------------------------------
+
+    When the verify flag is on, all disk writes are verified provided
+    the device driver supports read-after-write verification.
+
+    The verify flag is typically off, because disk errors are rare and
+    verification slows writing.
+
+    Note that the flag can be changed by DOS's VERIFY command.
+</pre><hr><b>See Also:</b> <a href="ng18570.html">54h</a> <pre></pre>
+
+
+</html>
+

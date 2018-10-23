@@ -1,0 +1,49 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>int 2fh / 4b04h         free switcher id                             dos 5.0+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>int 2fh / 4b04h         free switcher id                             dos 5.0+</b>">
+<title>int 2fh / 4b04h         free switcher id                             dos 5.0+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng2566d.html">[&lt;&lt;Previous Entry]</a> <a href="ng210fe.html">[^^Up^^]</a> <a href="ng25b1f.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Int 2Fh / 4B04h         Free Switcher ID                             DOS 5.0+</B>
+
+    Frees the switcher identifier associated with the task switcher
+    having the specified service-function handler. When a task
+    switcher terminates, it calls this function.
+
+    Client programs must not call this function.
+
+        <B>Entry</B>   AX    = 4B04h
+                BX    = ID (allocated by Int 2Fh function 4B03h)
+                ES:DI = Address of service-function handler
+
+        <B>Return</B>  AX = BX = 00h   Success
+                or
+                BX &gt; 0          Invalid switcher ID
+
+    [...]
+</pre><hr><b>See Also:</b> <a href="ng2566d.html">4B03h</a> <pre></pre>
+
+
+</html>
+

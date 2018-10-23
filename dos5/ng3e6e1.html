@@ -1,0 +1,66 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - Norton Guide, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - Norton Guide">
+
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng3e20f.html">[&lt;&lt;Previous Entry]</a> <a href="ng361d7.html">[^^Up^^]</a> <a href="ng3ebcd.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+
+struc PSP                               ; Program Segment Prefix
+ pspInt20               dw ?            ; Int 20h instruction
+ pspNextParagraph       dw ?            ; Segment addr of next paragraph
+                        db ?            ; Reserved
+ pspDispatcher          db 5 dup (?)    ; Far call to DOS
+ pspTerminateVector     dd ?            ; Int 22h addr
+ pspControlCVector      dd ?            ; Int 23h addr
+ pspCritErrorVector     dd ?            ; Int 24h addr
+                        dw 11 dup (?)   ; Reserved
+ pspEnvironment         dw ?            ; Segment addr of environment
+                        dw 23 dup (?)   ; Reserved
+ pspFCB_1               db 16 dup (?)   ; Default FCB #1
+ pspFCB_2               db 16 dup (?)   ; Default FCB #2
+                        dd ?            ; Reserved
+ pspCommandTail         db 128 dup (?)  ; Command tail (also default DTA)
+ends                                    ; = 256d = 100h bytes
+
+        ; The Program Segment Prefix is a control structure that
+        ; DOS builds for each program. PSP occupies the first 256
+        ; (100h) bytes of the memory allocated to the program.
+
+
+        ; pspNextParagraph (offset 0002h in PSP)
+        ; Segment address of 1st paragraph after
+        ; program's memory allocation block.
+
+        ; pspEnvironment   (offset 002Ch in PSP)
+        ; Segment address of program's environment block
+
+        ; pspCommandTail   (offset 0080h in PSP)
+        ; Program's command-line arguments
+        ; Format: byte length of arguments, arguments, CR character
+        ;         (db 9," /s a.fil",0dh)
+</pre><hr><b>See Also:</b> <a href="ng1838c.html">51h</a> <a href="ng175a5.html">4Eh</a> <a href="ng273cf.html">Int 22h</a> <pre></pre>
+
+
+</html>
+

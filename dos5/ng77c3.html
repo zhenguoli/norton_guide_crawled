@@ -1,0 +1,50 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 3ah            remove directory (rmdir)</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 3ah            remove directory (rmdir)</b>">
+<title>function 3ah            remove directory (rmdir)</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng74cb.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng7a79.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 3Ah            Remove Directory (RMDIR)</B>
+
+    Removes (deletes) the specified subdirectory.
+
+        <B>Entry</B>   AH    = 3Ah
+                DS:DX = Pointer to ASCIIZ directory name
+
+        <B>Return</B>  AX = Error code, if CF is set
+                     | 03h Path not found
+                     | 05h Access denied (root / directory not empty)
+                     | 10h Cannot delete current directory
+
+    ------------------------------------------------------------------
+
+    Function 3Ah removes the subdirectory whose path is specified in
+    the zero-ended string at address DS:DX; the string length is
+    limited to 64 characters. The string must be a valid DOS directory
+    name and cannot contain wildcards.
+</pre><hr><b>See Also:</b> <a href="ng74cb.html">39h</a> <a href="ng7a79.html">3bh</a> <a href="ng9f2e.html">41h</a> <a href="ng142a8.html">47h</a> <a href="ng19dc7.html">59h</a> <pre></pre>
+
+
+</html>
+

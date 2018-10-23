@@ -1,0 +1,46 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 3300h          get ctrl-c check flag</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 3300h          get ctrl-c check flag</b>">
+<title>function 3300h          get ctrl-c check flag</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng5dd2.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng60f3.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 3300h          Get Ctrl-C Check Flag</B>
+
+    Returns the status of the Ctrl-C checking.
+
+        <B>Entry</B>   AX = 3300h
+
+        <B>Return</B>  DL = 0 | 1   BREAK flag is off | on
+
+    ------------------------------------------------------------------
+
+    If the Ctrl-C (Ctrl-Break) flag is off, DOS checks for Ctrl-C
+    keystrokes only while processing I/O functions 01h through 0Ch.
+    If the flag is on, DOS checks for Ctrl-C while processing other
+    system functions.
+</pre><hr><b>See Also:</b> <a href="ng60f3.html">3301h</a> <pre></pre>
+
+
+</html>
+

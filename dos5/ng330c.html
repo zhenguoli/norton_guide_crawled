@@ -1,0 +1,49 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 1ah            set disk transfer address (dta)</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 1ah            set disk transfer address (dta)</b>">
+<title>function 1ah            set disk transfer address (dta)</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng3165.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng3546.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 1Ah            Set Disk Transfer Address (DTA)</B>
+
+    Sets the address of the buffer that DOS uses for disk searches
+    (and FCB-based file I/O).
+
+        <B>Entry</B>   AH    = 1Ah
+                DS:DX = Address of DTA buffer
+
+        <B>Return</B>  Nothing
+
+    ------------------------------------------------------------------
+
+    DOS supplies a default DTA of 128 bytes at offset 0080h in the
+    Program Segment Prefix (PSP).
+
+    This function is used with the "Find First" and "Find Next"
+    functions (both Handle and FCB) and with FCB-based file I/O.
+</pre><hr><b>See Also:</b> <a href="ng513b.html">2fh</a> <a href="ng175a5.html">4eh</a> <a href="ng3e6e1.html">PSP</a> <pre></pre>
+
+
+</html>
+

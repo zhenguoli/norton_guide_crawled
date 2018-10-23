@@ -1,0 +1,53 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>int 2fh / 4b01h         build notification chain                     dos 5.0+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>int 2fh / 4b01h         build notification chain                     dos 5.0+</b>">
+<title>int 2fh / 4b01h         build notification chain                     dos 5.0+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng24b1a.html">[&lt;&lt;Previous Entry]</a> <a href="ng210fe.html">[^^Up^^]</a> <a href="ng254b1.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Int 2Fh / 4B01h         Build Notification Chain                     DOS 5.0+</B>
+
+    Creates a linked list of notification-function handlers for global
+    client programs and for client programs running in the current
+    session. The task switcher calls this function to determine which
+    client programs are to be notified about changes to the session.
+    To receive notification, client programs must intercept Interrupt
+    2Fh and process Build Notification Chain when they receive the
+    function call.
+
+        <U>Note    Use the task switcher API patch</U>
+
+        <B>Entry</B>   AX    = 4B01h
+                ES:BX = 0000:0000h
+                CX:DX = Address of service-function handler
+
+        <B>Return</B>  ES:BX = Pointer to a SwCallBackInfo structure
+                or
+                ES:BX = 0000:0000h   No notification
+
+    [...]
+</pre><hr><b>See Also:</b> <a href="ng3f799.html">SwCallBackInfo</a> <pre></pre>
+
+
+</html>
+

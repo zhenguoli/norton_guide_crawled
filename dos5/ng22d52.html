@@ -1,0 +1,52 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>int 2fh / 1680h         dos idle call                                dos 5.0+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>int 2fh / 1680h         dos idle call                                dos 5.0+</b>">
+<title>int 2fh / 1680h         dos idle call                                dos 5.0+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng22c4f.html">[&lt;&lt;Previous Entry]</a> <a href="ng210fe.html">[^^Up^^]</a> <a href="ng2309b.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Int 2Fh / 1680h         DOS Idle Call                                DOS 5.0+</B>
+
+    Informs the system that the program is idle--for example, waiting
+    for user input. The function permits the system to suspend the
+    idle program temporarily and transfer control to another program.
+
+        <B>Entry</B>   AX = 1680h
+
+        <B>Return</B>  AL = 00h | 80h   Call is supported | not supported
+
+
+    Programs should use this interrupt when they are idle (provided
+    that the Int 2Fh interrupt vector is not zero).
+
+    This interrupt is non-blocking, meaning the system does not
+    suspend the program unless another program is ready to be run. In
+    most cases, the interrupt returns immediately and the program
+    continues running. To make sure the system can suspend the
+    program, a program that remains idle should repeatedly call the
+    interrupt as part of its idle loop.
+</pre>
+
+
+</html>
+

@@ -1,0 +1,46 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 4406h          check device input status</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 4406h          check device input status</b>">
+<title>function 4406h          check device input status</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ngd38e.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ngd752.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 4406h          Check Device Input Status</B>
+
+    Checks to see if a device or file is ready for input.
+
+        <B>Entry</B>   AX = 4406h
+                BX = Device or file handle
+
+        <B>Return</B>  AL = FFh   Ready
+                AL = 00h   Device not ready | File pointer at EOF
+                or
+                AX = Error code, if CF is set
+                     | 01h Invalid function
+                     | 05h Access denied
+                     | 06h Invalid handle
+</pre><hr><b>See Also:</b> <a href="ngd752.html">4407h</a> <a href="ng312c0.html">Dev06h</a> <pre></pre>
+
+
+</html>
+

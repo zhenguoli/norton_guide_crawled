@@ -1,0 +1,58 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>device driver function 06h      input status                c</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>device driver function 06h      input status                c</b>">
+<title>device driver function 06h      input status                c</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng30e85.html">[&lt;&lt;Previous Entry]</a> <a href="ng2c72e.html">[^^Up^^]</a> <a href="ng316f6.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Device driver function 06h      Input Status                C</B>
+
+    Input Status specifies whether any characters are waiting in the
+    device-input buffer.
+
+    This function is required for character device drivers only.
+
+    ------------------------------------------------------------------
+
+    If the device has no input buffer, the busy bit must be zero.
+
+    Before attempting to read a character, DOS may wait for a device
+    to return a not-busy status.
+
+    ------------------------------------------------------------------
+
+    <B>srStatus</B>
+    Specifies the status of the completed function. If the device
+    input buffer has waiting characters, the busy bit (bit 9) must be
+    zero, indicating that DOS need not wait to read a character. If
+    the buffer has no characters, the driver must set the busy bit. In
+    either case, the driver must set the done bit (bit 8).
+
+    If the function is not successful, the driver must set both the
+    error and done bits (bits 15 and 8) and copy an error value to the
+    low-order byte.
+</pre><hr><b>See Also:</b> <a href="ng3f230.html">StatusRequest</a> <a href="ng32536.html">Dev0Ah</a> <a href="ngd5c6.html">4406h</a> <a href="ng2ca0f.html">Dev*</a> <pre></pre>
+
+
+</html>
+

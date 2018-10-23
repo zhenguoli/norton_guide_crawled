@@ -1,0 +1,60 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - Norton Guide, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - Norton Guide">
+
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng3e055.html">[&lt;&lt;Previous Entry]</a> <a href="ng361d7.html">[^^Up^^]</a> <a href="ng3e6e1.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+
+struc PartEntry
+ peBootable             db ?    ; 80h = bootable, 00h = non-bootable
+ peBeginHead            db ?    ; Beginning head (&lt;=&gt; 1st track in part.)
+ peBeginSector          db ?    ; Beginning sector (rel. to 1st track)
+ peBeginCylinder        db ?    ; Beginning cylinder (&lt;=&gt; 1st track)
+ peFileSystem           db ?    ; Type of file system
+ peEndHead              db ?    ; Ending head (&lt;=&gt; last track in part.)
+ peEndSector            db ?    ; Ending sector (rel. to 1st track)
+ peEndCylinder          db ?    ; Ending cylinder (&lt;=&gt; last track)
+ peStartSector          dd ?    ; Starting sector (rel. to beg. of disk)
+ peSectors              dd ?    ; No. of sectors in partition
+ends
+
+;       The PartEntry structure specifies the size and the starting
+;       and ending sectors of a partition on a disk that can be
+;       partitioned.
+;       DOS supplies a partition table for every disk that can be
+;       partitioned. The table, placed at the end of the first hidden
+;       sector on the logical drive, consists of one or more PartEntry
+;       structures.
+;
+;       ; peFileSystem
+;       00h     Unknown
+;       01h     12-bit FAT; partition smaller than 10 MB
+;       04h     16-bit FAT; partition smaller than 32 MB
+;       05h     Extended DOS partition
+;       06h     16-bit FAT; partition larger than or equal to 32 MB
+</pre><hr><b>See Also:</b> <a href="ng118f0.html">440Dh /61h</a> <a href="ng10bb2.html">440Dh /41h</a> <a href="ng380db.html">DeviceParams</a> <pre></pre>
+
+
+</html>
+

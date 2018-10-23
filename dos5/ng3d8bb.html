@@ -1,0 +1,43 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - Norton Guide, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - Norton Guide">
+
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng3d57f.html">[&lt;&lt;Previous Entry]</a> <a href="ng361d7.html">[^^Up^^]</a> <a href="ng3da90.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+
+struc MediaRequest              ; Device-Driver function 01h
+ mrLength       db ?            ; Length of structure, in bytes
+ mrUnit         db ?            ; Not used
+ mrFunction     db ?            ; Function number (01h)
+ mrStatus       dw ?            ; Status
+ mrReserved     db 8 dup (?)    ; Reserved
+ mrMediaID      db ?            ; INPUT:  current media descriptor
+ mrReturn       db ?            ; OUTPUT: media changed -1|0|1=yes|?|no
+ mrVolumeID     dd ?            ; OUTPUT: address of volume id.
+ends                            ; = 19d bytes
+</pre><hr><b>See Also:</b> <a href="ng2edb5.html">Dev01h</a> <a href="ng3d57f.html">Media types</a> <pre></pre>
+
+
+</html>
+

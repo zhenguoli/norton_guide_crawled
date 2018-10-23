@@ -1,0 +1,50 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 2dh            set time</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 2dh            set time</b>">
+<title>function 2dh            set time</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng4a57.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng4eed.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 2Dh            Set Time</B>
+
+    Sets the current DOS system time (the time maintained by the clock
+    device).
+
+        <B>Entry</B>   AH = 2Dh
+                CH = Hour (0-23)
+                CL = Minutes (0-59)
+                DH = Seconds (0-59)
+                DL = Hundredths of a second (0-99)
+
+        <B>Return</B>  AL = 00h   If time set successfully
+                AL = FFh   If time not set successfully
+
+    ------------------------------------------------------------------
+
+    If the hardware does not resolve hundredths of seconds, the value
+    in DL is ignored.
+</pre><hr><b>See Also:</b> <a href="ng47b7.html">2ah</a> <a href="ng48fa.html">2bh</a> <a href="ng4a57.html">2ch</a> <pre></pre>
+
+
+</html>
+

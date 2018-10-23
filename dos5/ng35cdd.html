@@ -1,0 +1,71 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>device driver function 19h      ioctl query             b   c</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>device driver function 19h      ioctl query             b   c</b>">
+<title>device driver function 19h      ioctl query             b   c</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng3592f.html">[&lt;&lt;Previous Entry]</a> <a href="ng2c72e.html">[^^Up^^]</a> [Next Entry&gt;&gt;]  <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Device driver function 19h      IOCTL Query             b   c</B>
+
+    IOCTL Query determines whether a given generic IOCTL function
+    (minor code) is supported by the driver.
+
+    This function can be used both for block and character device
+    drivers.
+
+    ------------------------------------------------------------------
+
+    DOS calls this function only if bit 7 is set in the dhAttributes
+    field of the DeviceHeader structure for the driver.
+
+    ------------------------------------------------------------------
+
+    <B>giUnit</B>
+    Specifies the device the request is for. This field is used for
+    block device drivers only.
+
+
+    <B>giStatus</B>
+    Receives the status of the query. If the driver does not support
+    the given generic IOCTL function, it must set the error and done
+    bits (bits 15 and 8) and set the low-order byte to error value 03h
+    (Unknown Function). Otherwise, it must set the done bit (bit 8).
+
+
+    <B>giCategory</B>
+    Specifies the device category of the generic IOCTL function to be
+    checked.
+
+
+    <B>giMinorCode</B>
+    Specifies the minor code of the generic IOCTL function to be
+    checked.
+
+
+    <B>giIOCTLData</B>
+    This field is not used by this function and must not be changed.
+</pre><hr><b>See Also:</b> <a href="ng3c6b5.html">IOCTLRequest</a> <a href="ng348de.html">Dev13h</a> <a href="ng12f6a.html">4410h</a> <a href="ng132d3.html">4411h</a> <a href="ng378a9.html">DeviceHeader</a> <a href="ng2ca0f.html">Dev*</a> <pre></pre>
+
+
+</html>
+

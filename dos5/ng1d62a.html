@@ -1,0 +1,61 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 6501h          get extended country information             dos 3.3+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 6501h          get extended country information             dos 3.3+</b>">
+<title>function 6501h          get extended country information             dos 3.3+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng1d43c.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng1da06.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 6501h          Get Extended Country Information             DOS 3.3+</B>
+
+     Returns the country information that DOS uses to control the
+     keyboard and screen.
+
+        <B>Entry</B>   AX    = 6501h
+                BX    = Code page ID (0FFFFh = current code page)
+                CX    = Size of buffer (min. 5, set to 41)
+                DX    = Country code (0FFFFh = current country)
+                ES:DI = Pointer to country info buffer
+
+        <B>Return</B>  Buffer updated
+                or
+                AX = Error code, if CF is set
+                     | 01h Invalid function (CX &lt; 5)
+                     | 02h File not found (bad code page/country code)
+
+    ------------------------------------------------------------------
+
+    Format of country info buffer:
+        Offset  Size    Description
+        00h     1       Info-ID (= 01h)
+        01h     40d     ExtCountryInfo structure
+
+
+    <B>Note</B>
+    If the parameter passed in CX is greater than 5 but less than the
+    size of the country information, the information is truncated and
+    no error is returned.
+</pre><hr><b>See Also:</b> <a href="ng1f445.html">6601h</a> <a href="ng1f59a.html">6602h</a> <a href="ng6f6e.html">38h</a> <a href="ng372f5.html">CodePageIDs</a> <a href="ng373d7.html">CountryCodes</a> <a href="ng3a618.html">ExtCountryInfo</a> <pre></pre>
+
+
+</html>
+

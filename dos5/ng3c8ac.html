@@ -1,0 +1,44 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - Norton Guide, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - Norton Guide">
+
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng3c6b5.html">[&lt;&lt;Previous Entry]</a> <a href="ng361d7.html">[^^Up^^]</a> <a href="ng3caac.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+
+struc IOCTLRWRequest            ; Device-Driver functions 03h, 0Ch
+ irwrLength     db ?            ; Length of structure, in bytes
+ irwrUnit       db ?            ; Unit number (block device only)
+ irwrFunction   db ?            ; Function number (03h or 0Ch)
+ irwrStatus     dw ?            ; Status
+ irwrReserved   db 8 dup (?)    ; Reserved
+ irwrData       db ?            ; Not used
+ irwrBuffer     dd ?            ; INPUT:  buffer address
+ irwrBytes      dw ?            ; INPUT:  no. of bytes requested
+                                ; OUTPUT: no. of bytes read/written
+ends                            ; = 20d bytes
+</pre><hr><b>See Also:</b> <a href="ng2fe02.html">Dev03h</a> <a href="ng32acf.html">Dev0Ch</a> <pre></pre>
+
+
+</html>
+

@@ -1,0 +1,52 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 3eh            close file with handle</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 3eh            close file with handle</b>">
+<title>function 3eh            close file with handle</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng8416.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng9336.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 3Eh            Close File with Handle</B>
+
+    Closes an open file.
+
+        <B>Entry</B>   AH = 3Eh
+                BX = File handle
+
+        <B>Return</B>  AX = Error code, if CF is set
+                     | 06h Invalid handle
+
+    ------------------------------------------------------------------
+
+    This function flushes the file's buffers, unlocks any locked
+    regions of the file, releases the handle, and updates the disk
+    directory to reflect any changes in the file size, date, or time.
+
+    Although closing a file invalidates the corresponding handle, DOS
+    may reuse the handle to identify a file that is subsequently
+    opened or created. Programs can use Is File or Device Remote
+    (function 440ah) to determine whether a given handle is valid.
+</pre><hr><b>See Also:</b> <a href="ng7d90.html">3ch</a> <a href="ng8416.html">3dh</a> <a href="ng16dfc.html">4ch</a> <a href="ng1a846.html">5ah</a> <a href="ng1fcb1.html">68h</a> <a href="ng33843.html">Dev0Eh</a> <a href="nge2c8.html">440ah</a> <pre></pre>
+
+
+</html>
+

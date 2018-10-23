@@ -1,0 +1,64 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 4411h          query ioctl device                           dos 5.0+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 4411h          query ioctl device                           dos 5.0+</b>">
+<title>function 4411h          query ioctl device                           dos 5.0+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng12f6a.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng136fa.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 4411h          Query IOCTL Device                           DOS 5.0+</B>
+
+    Determines whether the specified IOCTL function is supported by
+    the given drive.
+
+        <B>Entry</B>   AX = 4411h
+                BL = Drive number (0 = default, 1 = A, etc.)
+                CH = 08h (device category, must be 8)
+                CL = Function (function 440Dh minor code):
+                     | 40h   Set device parameters
+                     | 41h   Write track on logical drive
+                     | 42h   Format track on logical drive
+                     | 46h   Set media ID
+                     | 60h   Get device parameters
+                     | 61h   Read track on logical drive
+                     | 62h   Verify track on logical drive
+                     | 66h   Get media ID
+                     | 68h   Sense media ID
+
+        <B>Return</B>  Nothing (CF clear)
+                or
+                AX = Error code, if CF is set
+                     | 01h Invalid function
+                     | 05h Access denied
+                     | 0Fh Invalid drive
+
+    ------------------------------------------------------------------
+              
+    This function returns an error value of 1 (invalid function) if
+    the device driver has no support for IOCTL functions, 5 (access
+    denied) if the driver supports IOCTL functions but does not
+    support the specified IOCTL.
+</pre><hr><b>See Also:</b> <a href="ng12f6a.html">4410h</a> <a href="ng35cdd.html">Dev19h</a> <pre></pre>
+
+
+</html>
+

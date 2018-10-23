@@ -1,0 +1,51 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 440ch /4dh     end code-page prepare                        dos 3.3+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 440ch /4dh     end code-page prepare                        dos 3.3+</b>">
+<title>function 440ch /4dh     end code-page prepare                        dos 3.3+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ngf1eb.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ngf8db.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 440Ch /4dh     End Code-Page Prepare                        DOS 3.3+</B>
+
+    Tells a device driver that code-page preparation is complete.
+
+        <B>Entry</B>   AX = 440Ch
+                BX = Device handle
+                CH = Device category:
+                     | 01h   Serial device
+                     | 03h   Console (screen)
+                     | 05h   Parallel printer
+                CL = 4dh
+
+        <B>Return</B>  AX = Error code, if CF is set
+                     | ??
+
+    ------------------------------------------------------------------
+
+    This function completes code-page preparation started by using
+    Start Code-Page Prepare (function 440Ch /4ch).
+</pre><hr><b>See Also:</b> <a href="ngefd3.html">440Ch /4ah</a> <a href="ngf1eb.html">440Ch /4ch</a> <a href="ngfd74.html">440Ch /6ah</a> <a href="ngff76.html">440Ch /6bh</a> <pre></pre>
+
+
+</html>
+

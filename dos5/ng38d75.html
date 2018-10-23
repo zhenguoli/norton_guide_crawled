@@ -1,0 +1,46 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - Norton Guide, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - Norton Guide">
+
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng38c9d.html">[&lt;&lt;Previous Entry]</a> <a href="ng361d7.html">[^^Up^^]</a> <a href="ng38fd8.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+
+struc DisplayMode
+ dmInfoLevel    db ?            ; Information level (must be zero)
+ dmReserved1    db ?            ; Reserved
+ dmDataLength   dw ?            ; Length of remaining data, in bytes (14d)
+ dmFlags        dw ?            ; Control flags (0|1=intensity off|on)
+ dmMode         db ?            ; Display mode (1=text; 2=graphics)
+ dmReserved2    db ?            ; Reserved
+ dmColors       dw ?            ; Number of colors available
+ dmWidth        dw ?            ; Screen width in pixels (graphics)
+ dmLength       dw ?            ; Screen length in pixels (graphics)
+ dmColumns      dw ?            ; No. of text columns
+ dmRows         dw ?            ; No. of text rows
+ends                            ; = 18d bytes
+</pre><hr><b>See Also:</b> <a href="ng10233.html">440Ch /7fh</a> <a href="ngf8db.html">440Ch /5fh</a> <pre></pre>
+
+
+</html>
+

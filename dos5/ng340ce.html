@@ -1,0 +1,82 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>device driver function 10h      output until busy           c</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>device driver function 10h      output until busy           c</b>">
+<title>device driver function 10h      output until busy           c</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng33cf3.html">[&lt;&lt;Previous Entry]</a> <a href="ng2c72e.html">[^^Up^^]</a> <a href="ng348de.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Device driver function 10h      Output Until Busy           c</B>
+
+    Output Until Busy transfers data from the specified buffer to a
+    device until the device signals that it cannot accept more input.
+
+    This function is used for character device drivers only.
+
+    ------------------------------------------------------------------
+
+    DOS calls this function only if bit 13 is set in the dhAttributes
+    field of the DeviceHeader structure for the driver.
+
+    This function should write as much data to the device as possible
+    until the device signals that it cannot accept more data, at which
+    point the function should return immediately. The driver should
+    not wait under any circumstances. It is not an error for the
+    driver to transfer fewer bytes than DOS requested, but the driver
+    must return a value for the number of bytes transferred.
+
+    This function allows device drivers to take advantage of a
+    printer's internal RAM buffers. The driver can send data to the
+    printer until the printer's internal buffer is full and then
+    return to DOS immediately, rather than wait while data is printed.
+    DOS can then periodically check the printer's status and send more
+    data only when the printer is ready.
+
+    ------------------------------------------------------------------
+
+    <B>orStatus</B>
+    Specifies the status of the completed function. If the function
+    was successful, the driver must set the done bit (bit 8).
+    Otherwise, the driver must set both the error and done bits (bits
+    15 and 8) and copy an error value to the low-order byte.
+
+
+    <B>orBuffer</B>
+    Contains the 32-bit address of the buffer containing data to write
+    to the device.
+
+
+    <B>orBytes</B>
+    Contains the number of bytes to write and receives the number of
+    bytes written.
+
+        input   Specifies the number of bytes to write. This number
+                must not exceed the amount of data in the specified
+                buffer.
+
+        output  Specifies the number of bytes written. This number
+                cannot exceed the requested number of bytes.
+</pre><hr><b>See Also:</b> <a href="ng3e055.html">OutputRequest</a> <a href="ng31963.html">Dev08h</a> <a href="ng378a9.html">DeviceHeader</a> <a href="ng2ca0f.html">Dev*</a> <pre></pre>
+
+
+</html>
+

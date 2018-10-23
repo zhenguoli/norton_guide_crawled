@@ -1,0 +1,52 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 68h            commit file                                  dos 3.3+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 68h            commit file                                  dos 3.3+</b>">
+<title>function 68h            commit file                                  dos 3.3+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng1f845.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng1ff99.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 68h            Commit File                                  DOS 3.3+</B>
+
+    Flushes all stored (buffered) data for a file without closing the
+    file; this ensures that the contents of the file are current.
+
+        <B>Entry</B>   AH = 68h
+                BX = File handle
+
+        <B>Return </B> AX = Error code, if CF is set
+                     | 06h Invalid handle
+                     | ??
+
+    ------------------------------------------------------------------
+
+    This function provides a more efficient way to update file
+    contents than closing a file and immediately reopening it.
+    However, if a program opens or creates a file by specifying the
+    flag open_flags_commit (4000h) with function 6ch (Extended Open/
+    Create), the system updates the file each time the file is written
+    to.
+</pre><hr><b>See Also:</b> <a href="ng1ff99.html">6ch</a> <a href="ng2896.html">0dh</a> <a href="ng136fa.html">45h</a> <pre></pre>
+
+
+</html>
+

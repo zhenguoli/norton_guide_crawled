@@ -1,0 +1,73 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>device driver function 0ch      ioctl write             b   c</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>device driver function 0ch      ioctl write             b   c</b>">
+<title>device driver function 0ch      ioctl write             b   c</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng32866.html">[&lt;&lt;Previous Entry]</a> <a href="ng2c72e.html">[^^Up^^]</a> <a href="ng33042.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Device driver function 0Ch      IOCTL Write             b   c</B>
+
+    IOCTL Write transfers data from a buffer to a device driver.
+
+    This function can be used for both block and character device
+    drivers.
+
+    ------------------------------------------------------------------
+
+    DOS calls this function only if bit 14 is set in the dhAttributes
+    field of the DeviceHeader structure for the driver.
+
+    ------------------------------------------------------------------
+
+    <B>irwrUnit</B>
+    Specifies the device to which data is to be written. This field is
+    used for block device drivers only.
+
+
+    <B>irwrStatus</B>
+    Specifies the status of the completed function. If the function
+    was successful, the driver must set the done bit (bit 8).
+    Otherwise, the driver must set both the error and done bits (bits
+    15 and 8) and copy an error value to the low-order byte.
+
+
+    <B>irwrBuffer</B>
+    Contains the 32-bit address of the buffer containing data to write
+    to the device.
+
+
+    <B>irwrBytes</B>
+    Contains the number of bytes to write and receives the number of
+    bytes written.
+
+        input   Specifies the number of bytes to write. This number
+                must not exceed the amount of data in the specified
+                buffer.
+
+        output  Specifies the number of bytes written. This number
+                cannot exceed the requested number of bytes.
+</pre><hr><b>See Also:</b> <a href="ng3c8ac.html">IOCTLRWRequest</a> <a href="ng2fe02.html">Dev03h</a> <a href="ngcdd9.html">4403h</a> <a href="ngd38e.html">4405h</a> <a href="ng378a9.html">DeviceHeader</a> <a href="ng2ca0f.html">Dev*</a> <pre></pre>
+
+
+</html>
+

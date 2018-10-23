@@ -1,0 +1,68 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 30h            get version number</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 30h            get version number</b>">
+<title>function 30h            get version number</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng513b.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng56df.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 30h            Get Version Number</B>
+
+    Returns the DOS version number.
+
+        <B>Entry</B>   AH = 30h
+                (DOS 5.0+: AL = 0   Return BH = OEM number
+                           AL = 1   Return BH = version flag)
+
+        <B>Return</B>  AL    = Major version number
+                AH    = Minor version number
+                BL:CX = 24-bit user serial number
+                        (zero if unused)
+                BH    = OEM number
+                        <B>or</B>
+                        Version flag (DOS 5.0+):
+                        bit 3 = 0: DOS runs in RAM
+                        bit 3 = 1: DOS runs in ROM
+                        other bits reserved (0)
+
+    ------------------------------------------------------------------
+
+    Used under DOS 3.30, this call would return AL = 03h and AH = 1Eh
+    (30 decimal).
+
+
+    <B>Notes</B>
+    The version returned under DOS 4.0x may be modified by entries in
+    the special program list.
+
+    The version returned under DOS 5+ may be modified by SETVER; this
+    version number can differ from the version number returned by
+    function 3306h.
+
+    The OS/2 v1.x Compatibility Box returns major version 0Ah (10).
+    The OS/2 v2.x Compatibility Box returns major version 14h (20).
+    The Windows/NT DOS box returns version 5.00, subject to SETVER.
+</pre><hr><b>See Also:</b> <a href="ng65ad.html">3306h</a> <pre></pre>
+
+
+</html>
+

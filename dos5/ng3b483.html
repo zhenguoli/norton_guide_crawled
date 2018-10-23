@@ -1,0 +1,58 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - Norton Guide, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - Norton Guide">
+
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng3af21.html">[&lt;&lt;Previous Entry]</a> <a href="ng361d7.html">[^^Up^^]</a> <a href="ng3b848.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+
+struc FileCharTable
+ fctLength      dw ?    ; Byte size of structure, excl. this field,
+                        ;   and array of characters
+                db ?    ; ?
+ fctFirst       db ?    ; Lowest permissible character value
+ fctLast        db ?    ; Highest permissible character value
+                db ?    ; ?
+ fctExcludeFirst db ?   ; First in range of excluded characters
+ fctExcludeLast db ?    ; Last in range of excluded characters
+                db ?    ; ?
+ fctIllegals    db ?    ; No. of characters in array
+                        ; Start of array of illegal characters (terminators)
+ends
+
+label FileNameTerminators byte
+; Invalid in filename or file extension (defaults)
+  db 00h,01h,02h,03h,04h,05h,06h,07h    ; ASCII 0..31
+  db 08h,09h,0Ah,0Bh,0Ch,0Dh,0Eh,0Fh    ; incl. tab, LF, CR
+  db 11h,11h,12h,13h,14h,15h,16h,17h
+  db 18h,19h,1Ah,1Bh,1Ch,1Dh,1Eh,1Fh
+  db 7Ch,3Ch,3Eh                        ; '|&lt;&gt;'
+  db 3Ah,5Ch,2Eh                        ; ':\.'
+  db 22h,2Fh,5Bh,5Dh                    ; '"/[]'
+  db 2Bh,3Dh,3Bh,2Ch                    ; '+=;,'
+     NUM_FILE_NAME_TERMINATORS = ($ - FileNameTerminators)
+</pre><hr><b>See Also:</b> <a href="ng1e275.html">6505h</a> <pre></pre>
+
+
+</html>
+

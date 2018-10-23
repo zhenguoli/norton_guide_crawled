@@ -1,0 +1,53 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>int 2fh / 4b03h         allocate switcher id                         dos 5.0+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>int 2fh / 4b03h         allocate switcher id                         dos 5.0+</b>">
+<title>int 2fh / 4b03h         allocate switcher id                         dos 5.0+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng254b1.html">[&lt;&lt;Previous Entry]</a> <a href="ng210fe.html">[^^Up^^]</a> <a href="ng2591e.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Int 2Fh / 4B03h         Allocate Switcher ID                         DOS 5.0+</B>
+
+    Returns a unique switcher identifier (in the range 01h through
+    0Fh). A task switcher (or controlling session manager) calls this
+    function on initialization and then uses the switcher identifier
+    to create session identifiers for programs that it manages. The
+    first-loaded task switcher is responsible for processing this
+    function.
+
+    Client programs must not call this function.
+
+        <B>Entry</B>   AX    = 4B03h
+                BX    = 00h   (Reserved, must be zero)
+                ES:DI = Address of service-function handler
+
+        <B>Return</B>  AX = 00h
+                BX = New task switcher's identifier
+                or
+                BX = 00h
+
+    [...]
+</pre><hr><b>See Also:</b> <a href="ng254b1.html">4B02h</a> <a href="ng2591e.html">4B04h</a> <pre></pre>
+
+
+</html>
+

@@ -1,0 +1,44 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 2bh            set date</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 2bh            set date</b>">
+<title>function 2bh            set date</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng47b7.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng4a57.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 2Bh            Set Date</B>
+
+    Sets the current DOS system date (the date maintained by the clock
+    device).
+
+        <B>Entry</B>   AH = 2Bh
+                CX = Year (1980 - 2099)
+                DH = Month (1 - 12)
+                DL = Day (1 - 31)
+
+        <B>Return</B>  AL = 00h   If valid date specified
+                AL = FFh   Invalid date, system date unchanged
+</pre><hr><b>See Also:</b> <a href="ng47b7.html">2ah</a> <a href="ng4a57.html">2ch</a> <a href="ng4cd7.html">2dh</a> <pre></pre>
+
+
+</html>
+

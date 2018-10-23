@@ -1,0 +1,84 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 46h            force duplicate file handle</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 46h            force duplicate file handle</b>">
+<title>function 46h            force duplicate file handle</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng136fa.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng142a8.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 46h            Force Duplicate File Handle</B>
+
+    Forces one handle to refer to the same file or device as another
+    handle.
+
+        <B>Entry</B>   AH = 46h
+                BX = Handle of file or device
+                CX = New handle for same file or device
+
+        <B>Return</B>  Nothing (CF clear)
+                or
+                AX = Error code, if CF is set
+                     | 04h No handles available
+                     | 06h Invalid handle
+
+    ------------------------------------------------------------------
+
+    After a program uses this function, both handles can be used to
+    read from or write to the file or device specified by CX. Moving
+    the file pointer with either handle moves the file pointer for the
+    other handle.
+
+    If the second handle refers to an open file, that file is closed
+    before the handle is set equal to the first handle.
+
+    ------------------------------------------------------------------
+
+    <B>Example</B>
+
+        ; Redirect output to StdOut to a file,
+        ; e.g. for a child program
+        mov     bx,STDOUT
+        mov     ah,45h                  ; Duplicate Handle
+        int     21h
+        jc      @@error
+        mov     [stdout_dup],ax         ; Store dup. handle
+        mov     bx,[file_handle]        ; Handle of an open file
+        mov     cx,STDOUT               ; Handle to be redirected
+        mov     ah,46h                  ; Force Duplicate Handle
+        int     21h
+        jc      @@error
+        ; Output to standard output now redirected
+        ; ...
+        ; Cancel the redirection
+        mov     bx,[stdout_dup]         ; Previous STDOUT dup.
+        mov     cx,STDOUT               ; Handle to be redirected
+        mov     ah,46h                  ; Force Duplicate Handle
+        int     21h
+        jc      @@error
+        mov     ah,3eh                  ; Close stdout_dup
+        int     21h
+        ;...
+</pre><hr><b>See Also:</b> <a href="ng136fa.html">45h</a> <a href="ng1f845.html">67h</a> <a href="ng19dc7.html">59h</a> <a href="ngb40a.html">4400h</a> <a href="ng3f36d.html">StdDevices</a> <pre></pre>
+
+
+</html>
+

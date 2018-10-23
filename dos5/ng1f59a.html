@@ -1,0 +1,50 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 6602h          set global code page                         dos 3.3+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 6602h          set global code page                         dos 3.3+</b>">
+<title>function 6602h          set global code page                         dos 3.3+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng1f445.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng1f845.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 6602h          Set Global Code Page                         DOS 3.3+</B>
+
+    Sets the code page used by all programs.
+
+        <B>Entry</B>   AX = 6602h
+                BX = Global code page
+
+        <B>Return</B>  AX = Error code, if CF is set
+                     | 02h File not found
+
+    ------------------------------------------------------------------
+
+    Before a code page can be selected for use on a device, the device
+    must be prepared for code-page switching. The selected code page
+    must be compatible with the country code specified in CONFIG.SYS.
+    DOS returns an error value of 2 (file not found) if it cannot read
+    the COUNTRY.SYS file or another specified country-information
+    file.
+</pre><hr><b>See Also:</b> <a href="ng1f445.html">6601h</a> <a href="ng372f5.html">CodePageIDs</a> <pre></pre>
+
+
+</html>
+

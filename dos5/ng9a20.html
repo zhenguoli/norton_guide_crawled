@@ -1,0 +1,65 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 40h            write file or device</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 40h            write file or device</b>">
+<title>function 40h            write file or device</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng9336.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng9f2e.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 40h            Write File or Device</B>
+
+    Writes bytes from a buffer to an open file or device.
+
+        <B>Entry</B>   AH    = 40h
+                BX    = Handle of file or device
+                CX    = Number of bytes to write <U>(&gt; 0)</U>
+                DS:DX = Address of buffer
+
+        <B>Return</B>  AX = Number of bytes written
+                or
+                AX = Error code, if CF is set
+                     | 05h Access denied (file is read-only)
+                     | 06h Invalid handle
+
+    ------------------------------------------------------------------
+
+    This function writes data to the file or device whose handle is in
+    BX. When DOS writes to a file, it writes data starting at the
+    current location of the file pointer. When this function returns,
+    the file pointer is positioned at the byte immediately following
+    the last byte written to the file (i.e. incremented by the number
+    of bytes written).
+
+    A program can write bytes to anywhere in the file by calling
+    function 42h (LSEEK) to move to file pointer before writing data.
+
+    Writing 0 (zero) bytes <U>truncates</U> the file at the current position
+    of the file pointer.
+
+    If the number of bytes written is smaller than the number
+    requested, the destination file or disk is full. The carry flag is
+    <B>not</B> set in this situation.
+</pre><hr><b>See Also:</b> <a href="nga2a0.html">42h</a> <a href="ng901e.html">3eh</a> <a href="ng1a846.html">5ah</a> <a href="ng1fcb1.html">68h</a> <a href="ng19dc7.html">59h</a> <a href="ngb40a.html">4400h</a> <a href="ng31963.html">Dev08h</a> <a href="ng3f36d.html">StdDevices</a> <pre></pre>
+
+
+</html>
+

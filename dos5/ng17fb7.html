@@ -1,0 +1,52 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 4fh            find next file (find next)</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 4fh            find next file (find next)</b>">
+<title>function 4fh            find next file (find next)</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng175a5.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng18258.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 4Fh            Find Next File (FIND NEXT)</B>
+
+    Searches for the next directory entry that matches the name and
+    attributes specified in a previous call to Find First (4eh). The
+    current DTA must contain the information filled in by the Find
+    First function.
+
+        <B>Entry</B>   AH = 4Fh
+
+        <B>Return</B>  FileInfo structure at current DTA
+                or
+                AX = Error code, if CF is set
+                     | 02h File not found
+                     | 03h Path not found
+                     | 12h No more files to be found
+
+    ------------------------------------------------------------------
+
+    Function 4fh continues the file search that was begun by function
+    4eh (Find First File).
+</pre><hr><b>See Also:</b> <a href="ng175a5.html">4eh</a> <a href="ng19dc7.html">59h</a> <a href="ng3b848.html">FileInfo</a> <pre></pre>
+
+
+</html>
+

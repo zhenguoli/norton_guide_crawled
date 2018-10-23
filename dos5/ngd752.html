@@ -1,0 +1,61 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 4407h          check device output status</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 4407h          check device output status</b>">
+<title>function 4407h          check device output status</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ngd5c6.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ngd9e3.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 4407h          Check Device Output Status</B>
+
+    Checks to see if the device or file is ready for output.
+
+        <B>Entry</B>   AX = 4407h
+                BX = Device or file handle
+
+        <B>Return</B>  AL = FFh   Ready
+                AL = 00h   Device not ready
+                or
+                AX = Error code, if CF is set
+                     | 01h Invalid function
+                     | 05h Access denied
+                     | 06h Invalid handle
+
+    <B>Note</B>
+    For an output file, this function always returns AL = FFh (ready),
+    even if the disk is full or there is no disk in the drive.
+
+    
+    <B>Example</B>
+
+        mov     bx,StdPrn
+        mov     ax,4407h
+        int     21h
+        jc      @@error
+        cmp     al,0ffh
+        jnz     @@PRN_not_ready
+        ;...
+</pre><hr><b>See Also:</b> <a href="ngd5c6.html">4406h</a> <a href="ng32536.html">Dev0Ah</a> <a href="ng3f36d.html">StdDevices</a> <pre></pre>
+
+
+</html>
+

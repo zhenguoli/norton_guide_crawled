@@ -1,0 +1,56 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 36h            get disk free space</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 36h            get disk free space</b>">
+<title>function 36h            get disk free space</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng6afc.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng6f6e.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 36h            Get Disk Free Space</B>
+
+    Returns the number of available clusters, and other information
+    about the disk in the specified drive.
+
+        <B>Entry</B>   AH = 36h
+                DL = Drive number (0=default, 1=A, 2=B, etc.)
+
+        <B>Return</B>  AX = FFFFh if function failed
+                otherwise
+                AX = Number of sectors per cluster
+                BX = Number of available clusters on the disk
+                CX = Number of bytes per sector
+                DX = Total number of clusters on the disk
+
+    ------------------------------------------------------------------
+
+    The number of free bytes on the disk can be calculated by
+    multiplying the available clusters by the sectors per cluster by
+    the bytes per sector (BX * AX * CX).
+
+    DOS reports sectors allocated in the file allocation table (FAT)
+    but not belonging to a file (lost clusters) as used clusters, just
+    as if they were allocated to a file.
+</pre>
+
+
+</html>
+

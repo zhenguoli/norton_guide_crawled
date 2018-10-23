@@ -1,0 +1,57 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 440dh /41h     write track on logical drive                 dos 3.2+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 440dh /41h     write track on logical drive                 dos 3.2+</b>">
+<title>function 440dh /41h     write track on logical drive                 dos 3.2+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng10650.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng10f45.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 440Dh /41h     Write Track on Logical Drive                 DOS 3.2+</B>
+
+    Writes data from a buffer to a track on the specified drive.
+
+        <B>Entry</B>   AX    = 440Dh
+                BX    = Drive number (0 = default, 1 = A, etc.)
+                CH    = 08h (device category, must be 8)
+                CL    = 41h
+                DS:DX = Pointer to an RWBlock structure
+
+        <B>Return</B>  AX = Error code, if CF is set
+                     | 01h Invalid function
+                     | 02h File not found
+                     | 05h Access denied
+
+    ------------------------------------------------------------------
+
+    The RWBlock structure contains information that specifies the
+    sectors to be written to. The rwBuffer field must contain the
+    address of the buffer that contains the data to write to the disk.
+                                                     
+    This function returns an error value of 2 (file not found) if the
+    specified drive number is invalid.
+
+    Unlike Int 26h, this function can write hidden sectors.
+</pre><hr><b>See Also:</b> <a href="ng118f0.html">440Dh /61h</a> <a href="ng2aeda.html">Int 26h</a> <a href="ng3f079.html">RWBlock</a> <pre></pre>
+
+
+</html>
+

@@ -1,0 +1,47 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - Norton Guide, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - Norton Guide">
+
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng367e6.html">[&lt;&lt;Previous Entry]</a> <a href="ng361d7.html">[^^Up^^]</a> <a href="ng37053.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+
+struc BPB
+ bpbBytesPerSec         dw ?    ; Bytes per sector
+ bpbSecPerClust         db ?    ; Sectors per cluster
+ bpbResSectors          dw ?    ; No. of reserved sectors
+ bpbFATs                db ?    ; No. of file allocation tables
+ bpbRootDirEnts         dw ?    ; No. of root-directory entries
+ bpbSectors             dw ?    ; Total no. of sectors
+ bpbMedia               db ?    ; Media descriptor
+ bpbFATsecs             dw ?    ; No. of sectors per FAT
+ bpbSecPerTrack         dw ?    ; Sectors per track
+ bpbHeads               dw ?    ; No. of heads
+ bpbHiddenSecs          dd ?    ; No. of hidden sectors
+ bpbHugeSectors         dd ?    ; No. of sectors if bpbSectors = 0
+ends
+</pre><hr><b>See Also:</b> <a href="ng380db.html">DeviceParams</a> <a href="ng367e6.html">BootSector</a> <a href="ng3d57f.html">Media types</a> <pre></pre>
+
+
+</html>
+

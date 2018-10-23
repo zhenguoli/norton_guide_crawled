@@ -1,0 +1,61 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 6507h          get double-byte character set                dos 4.0+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 6507h          get double-byte character set                dos 4.0+</b>">
+<title>function 6507h          get double-byte character set                dos 4.0+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng1e6c4.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng1f08f.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 6507h          Get Double-Byte Character Set                DOS 4.0+</B>
+
+    Returns the address of a buffer containing values that specify the
+    valid ranges for lead bytes in the given double-byte character set
+    (DBCS).
+
+        <B>Entry</B>   AX    = 6507h
+                BX    = Code page ID (0FFFFh = current code page)
+                CX    = Size of buffer (min. 5)
+                DX    = Country code (0FFFFh = current country)
+                ES:DI = Pointer to country info buffer
+
+        <B>Return</B>  Buffer updated
+                or
+                AX = Error code, if CF is set
+                     | 01h Invalid function (CX &lt; 5)
+                     | 02h File not found
+
+    ------------------------------------------------------------------
+
+    Format of country info buffer:
+        Offset  Size    Description
+        00h     1       Info-ID (= 07h)
+        01h     4       32-bit address of DBCS table
+
+    The DBCS values start with a 16-bit value that
+    specifies the length of the table. The remainder of the table
+    consists of pairs of bytes with each pair specifying the low and
+    high character values for a valid range of lead byte values.
+</pre><hr><b>See Also:</b> <a href="ng1d62a.html">6501h</a> <a href="ng1f445.html">6601h</a> <a href="ng1f59a.html">6602h</a> <a href="ng372f5.html">CodePageIDs</a> <a href="ng373d7.html">CountryCodes</a> <pre></pre>
+
+
+</html>
+

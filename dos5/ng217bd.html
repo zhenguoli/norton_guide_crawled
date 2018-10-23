@@ -1,0 +1,59 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>int 2fh                 multiplex interrupt                          overview</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>int 2fh                 multiplex interrupt                          overview</b>">
+<title>int 2fh                 multiplex interrupt                          overview</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+[&lt;&lt;Previous Entry] <a href="ng210fe.html">[^^Up^^]</a> <a href="ng21cde.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Int 2Fh                 Multiplex Interrupt                          Overview</B>
+
+    Multiplex Interrupt (Interrupt 2Fh) is a common entry point for
+    terminate-and-stay-resident programs (TSRs) that provide services
+    to other programs. Programs use this interrupt to request services
+    from and to check the status of such DOS commands as PRINT,
+    ASSIGN, and APPEND.
+
+    A program requests service by placing a specified function number
+    in the AX register and issuing interrupt 2Fh. Some functions may
+    require additional values in registers before issuing the
+    interrupt.
+
+    ------------------------------------------------------------------
+
+    The DOS multiplex functions are available only if the corresponding
+    DOS command or program has been loaded. If the command or program
+    is not loaded, DOS carries out a default action, such as setting
+    the carry flag and setting the AX register to 01h (Invalid
+    Function).
+
+    Programs that install their own Interrupt 2Fh handler must create
+    a chain of handlers, that is, save the original address from the
+    Interrupt 2Fh vector-table entry and call the address as part of
+    their processing. Note that Int 2Fh function numbers 0000h through
+    0BFFFh are <B>reserved</B> for system programs and commands. Other
+    programs can use function numbers 0C000h through 0FFFFh.
+</pre>
+
+
+</html>
+

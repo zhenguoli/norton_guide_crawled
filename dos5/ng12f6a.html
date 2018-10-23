@@ -1,0 +1,59 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 4410h          query ioctl handle                           dos 5.0+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 4410h          query ioctl handle                           dos 5.0+</b>">
+<title>function 4410h          query ioctl handle                           dos 5.0+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng12c6e.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng132d3.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 4410h          Query IOCTL Handle                           DOS 5.0+</B>
+
+    Determines whether the specified IOCTL function is supported by
+    the given device driver.
+
+        <B>Entry</B>   AX = 4410h
+                BX = Device handle
+                CH = Device category:
+                     | 01h   Serial device
+                     | 03h   Console (screen)
+                     | 05h   Parallel printer
+                CL = Function (function 440Ch minor code):
+                     | 45h   Set iteration count
+                     | 65h   Get iteration count
+
+        <B>Return</B>  Nothing (CF clear)
+                or
+                AX = Error code, if CF is set
+                     | 01h Invalid function
+                     | 05h Access denied
+
+    ------------------------------------------------------------------
+              
+    This function returns an error value of 1 (invalid function) if
+    the device driver has no support for IOCTL functions, 5 (access
+    denied) if the driver supports IOCTL functions but does not
+    support the specified IOCTL.
+</pre><hr><b>See Also:</b> <a href="ng8416.html">3dh</a> <a href="ng7d90.html">3ch</a> <a href="ng132d3.html">4411h</a> <a href="ng35cdd.html">Dev19h</a> <pre></pre>
+
+
+</html>
+

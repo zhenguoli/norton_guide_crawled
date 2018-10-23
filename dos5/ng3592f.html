@@ -1,0 +1,56 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>device driver function 18h      set logical device      b</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>device driver function 18h      set logical device      b</b>">
+<title>device driver function 18h      set logical device      b</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng353de.html">[&lt;&lt;Previous Entry]</a> <a href="ng2c72e.html">[^^Up^^]</a> <a href="ng35cdd.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Device driver function 18h      Set Logical Device      b</B>
+
+    Set Logical Device sets the active drive number to the drive
+    specified by the ldrUnit field.
+
+    This function is used for block device drivers only.
+
+    ------------------------------------------------------------------
+
+    DOS calls this function only if bit 6 is set in the dhAttributes
+    field of the DeviceHeader structure for the driver.
+
+    ------------------------------------------------------------------
+
+    <B>ldrUnit</B>
+    Specifies the device to make active. This field contains a zero-
+    based drive number.
+
+
+    <B>ldrStatus</B>
+    Specifies the status of the completed function. If the function
+    was successful, the driver must set the done bit (bit 8).
+    Otherwise, the driver must set both the error and done bits (bits
+    15 and 8) and copy an error value to the low-order byte.
+</pre><hr><b>See Also:</b> <a href="ng3d3fc.html">LogDeviceRequest</a> <a href="ng353de.html">Dev17h</a> <a href="ng12c6e.html">440Fh</a> <a href="ng378a9.html">DeviceHeader</a> <a href="ng2ca0f.html">Dev*</a> <pre></pre>
+
+
+</html>
+

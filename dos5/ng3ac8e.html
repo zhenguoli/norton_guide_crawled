@@ -1,0 +1,46 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - Norton Guide, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - Norton Guide">
+
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng3ab62.html">[&lt;&lt;Previous Entry]</a> <a href="ng361d7.html">[^^Up^^]</a> <a href="ng3af21.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+
+struc FCB                       ; (FCB functions are obsolete)
+ fcbDriveID     db ?            ; Drive number (0 = default, 1 = A, etc.)
+ fcbFileName    db 8 dup (?)    ; Filename (space-padded ASCII)
+ fcbExtent      db 3 dup (?)    ; File extension (space-padded ASCII)
+ fcbCurBlockNo  dw ?            ; Current block number
+ fcbRecSize     dw ?            ; Record size
+ fcbFileSize    db 4 dup (?)    ; Size of file in bytes
+ fcbFileDate    dw ?            ; Date file last modified
+ fcbFileTime    dw ?            ; Time file last modified
+ fcbReserved    db 8 dup (?)    ; Reserved
+ fcbCurRecNo    db ?            ; Current record number
+ fcbRandomRecNo db 4 dup (?)    ; Random record number
+ends                            ; = 37d bytes
+</pre><hr><b>See Also:</b> <a href="ng3b46.html">29h</a> <a href="ng3ab62.html">ExtendedFCB</a> <pre></pre>
+
+
+</html>
+

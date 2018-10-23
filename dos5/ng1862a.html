@@ -1,0 +1,64 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 56h            rename file (rename)</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 56h            rename file (rename)</b>">
+<title>function 56h            rename file (rename)</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng18570.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng18a4a.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 56h            Rename File (RENAME)</B>
+
+    Renames or moves a file or directory by changing its directory
+    entry.
+
+        <B>Entry</B>   AH    = 56h
+                DS:DX = Pointer to an ASCIIZ string containing
+                        original path and filename
+                ES:DI = Pointer to an ASCIIZ string containing
+                        new path and filename
+
+        <B>Return</B>  Nothing
+                or
+                AX = Error code, if CF is set
+                     | 02h File not found
+                     | 03h Path not found
+                     | 05h Access denied
+                     | 11h Not the same device
+
+    ------------------------------------------------------------------
+
+    Open files must be closed before they are moved or renamed with
+    this function.
+
+    A program can use this function to move a file or directory by
+    specifying different paths in the parameters and keeping the
+    filename or directory name the same. This function cannot be used
+    to move files or directories from one disk drive to another;
+    however both the old and new names must specify the same drive
+    either explicitly or by default.
+
+    Wildcard characters cannot be included in the filenames.
+</pre><hr><b>See Also:</b> <a href="ng19dc7.html">59h</a> <pre></pre>
+
+
+</html>
+

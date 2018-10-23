@@ -1,0 +1,47 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>int 2fh / 4b02h         detect switcher                              dos 5.0+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>int 2fh / 4b02h         detect switcher                              dos 5.0+</b>">
+<title>int 2fh / 4b02h         detect switcher                              dos 5.0+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng251aa.html">[&lt;&lt;Previous Entry]</a> <a href="ng210fe.html">[^^Up^^]</a> <a href="ng2566d.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Int 2Fh / 4B02h         Detect Switcher                              DOS 5.0+</B>
+
+    Determines whether a task switcher is loaded. Client programs
+    (such as a session manager) that need to prevent or control the
+    interruptions causes by task switching should call this function
+    during initialization.
+
+        <B>Entry</B>   AX = 4B02h
+
+        <B>Return</B>  AX    = 00h
+                ES:DI = Address of service-function handler
+                or
+                ES:DI = 0000:0000h
+
+    [...]
+</pre><hr><b>See Also:</b> <a href="ng3faab.html">SwVersion</a> <pre></pre>
+
+
+</html>
+

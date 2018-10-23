@@ -1,0 +1,51 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 5d0ah          set extended error                           dos 3.1+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 5d0ah          set extended error                           dos 3.1+</b>">
+<title>function 5d0ah          set extended error                           dos 3.1+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng1b1df.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng1bd1c.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 5D0Ah          Set Extended Error                           DOS 3.1+</B>
+
+    Sets the error class, location, suggested action, and other
+    information that will be returned by the next call to function 59h.
+
+        <B>Entry</B>   AX    = 5D0Ah
+                DS:DX = Pointer to an Error structure
+
+        <B>Return</B>  Nothing
+
+
+    The Error structure contains error information as well as the
+    contents of the registers when an error occurred.
+
+    <B>Note</B>
+    This function was undocumented before DOS 5.0. The MS-DOS
+    Programmer's Reference 5.0 incorrectly states that this call was
+    introduced in DOS 4.0 and that the pointer should be passed in
+    the DS:SI registers.
+</pre><hr><b>See Also:</b> <a href="ng19dc7.html">59h</a> <a href="ng393f8.html">Error</a> <pre></pre>
+
+
+</html>
+

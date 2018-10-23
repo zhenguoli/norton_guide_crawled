@@ -1,0 +1,63 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 67h            set maximum handle count                     dos 3.3+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 67h            set maximum handle count                     dos 3.3+</b>">
+<title>function 67h            set maximum handle count                     dos 3.3+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng1f59a.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng1fcb1.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 67h            Set Maximum Handle Count                     DOS 3.3+</B>
+
+    Sets the maximum number of handles a program can use at any one
+    time.
+
+        <B>Entry</B>   AH = 67h
+                BX = Maximum number of open handles
+
+        <B>Return</B>  AX = Error code, if CF is set
+                     | ??
+
+    ------------------------------------------------------------------
+
+    This function sets the maximum number of handles for the program
+    but does not change the number of handles available in the system.
+    The total number of system handles is set by the FILES command in
+    the CONFIG.SYS file.
+
+    The maximum handle count specified in BX is a property of the
+    given program and is not inherited by child programs. This count
+    must be in the range 20 to 65,535. If a number less than 20 is
+    specified, the function uses 20 by default.
+
+    If this function is used to reduce the number of allowed handles,
+    the new limit does not take effect until any handles above the new
+    limit are closed.
+
+
+    <B>Note</B>
+    If a program requests an increase in the number of file handles,
+    there must be enough free memory for DOS to process this function.
+</pre><hr><b>See Also:</b> <a href="ng13c94.html">46h</a> <a href="ng14fd0.html">4ah</a> <pre></pre>
+
+
+</html>
+

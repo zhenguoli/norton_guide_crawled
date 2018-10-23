@@ -1,0 +1,75 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 4409h          is drive remote                              dos 3.1+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 4409h          is drive remote                              dos 3.1+</b>">
+<title>function 4409h          is drive remote                              dos 3.1+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ngd9e3.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="nge2c8.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 4409h          Is Drive Remote                              DOS 3.1+</B>
+
+    Determines whether the specified drive is local (attached to the
+    computer running the program) or remote (on a network server).
+
+        <B>Entry</B>   AX = 4409h
+                BL = Drive number (0 = default, 1 = A, etc.)
+
+        <B>Return</B>  DX bit 12 = 1   If drive is remote
+                AX changed
+                or
+                AX = Error code, if CF is set
+                     | 01h Invalid function
+                     | 0Fh Invalid drive
+
+    ------------------------------------------------------------------
+
+    If bit 12 of DX is set, the drive is remote (for example, if it
+    represents a network connection) or is a non-standard file system
+    (for example, CD-ROM); the other bits in DX are zero.
+
+    If bit 12 of DX is zero, the drive is not a network drive, and the
+    bits in the DX register have the following meaning:
+
+                <B>Bit     Description</B>
+                1       1 = Drive uses 32-bit sector addressing
+                6       1 = Drive accepts Generic IOCTL for Block
+                            Devices, Get Logical Drive Map, and Set
+                            Logical Drive Map (functions 440dh, 440eh,
+                            and 440fh)
+                7       1 = Drive accepts Query IOCTL Device (function
+                            4411h)
+                9       1 = Drive is local but shared by other
+                            computers in the network.
+                11      1 = Drive accepts Does Device Use Removable
+                            Media (function 4408h)
+                13      1 = Drive requires media descriptor in FAT
+                14      1 = Drive accepts Receive Control Data from
+                            Block Device and Send Control Data to
+                            Block Device (functions 4404h and 4405h)
+                15      1 = Substitution drive (for example, set by
+                            the SUBST command)
+                All other bits zero
+</pre><hr><b>See Also:</b> <a href="nge2c8.html">440ah</a> <a href="ngd9e3.html">4408h</a> <pre></pre>
+
+
+</html>
+

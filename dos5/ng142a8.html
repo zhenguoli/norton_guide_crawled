@@ -1,0 +1,57 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 47h            get current directory (getdir)</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 47h            get current directory (getdir)</b>">
+<title>function 47h            get current directory (getdir)</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng13c94.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng14632.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 47h            Get Current Directory (GETDIR)</B>
+
+    Returns the full path of the current directory on the specified
+    drive.
+
+        <B>Entry</B>   AH    = 47h
+                DL    = Drive number (0 = default, 1 = A, etc.)
+                DS:SI = Pointer to a 64-byte buffer
+
+        <B>Return</B>  Buffer filled
+                AX changed
+                or
+                AX = Error code, if CF is set
+                     | 0Fh Invalid drive
+
+    ------------------------------------------------------------------
+
+    This function returns the full pathname of the current directory,
+    excluding the drive designator and initial backslash character, as
+    an ASCIIZ string at the memory buffer pointed to by DS:SI.
+
+    The pathname may be as long as 63 bytes (without the initial
+    backslash), plus the terminating zero byte. If the current
+    directory is the root, the function returns a null ASCIIZ string
+    (that is, the first byte of the buffer will be zero).
+</pre><hr><b>See Also:</b> <a href="ng7a79.html">3bh</a> <a href="ng3165.html">19h</a> <a href="ng19dc7.html">59h</a> <pre></pre>
+
+
+</html>
+

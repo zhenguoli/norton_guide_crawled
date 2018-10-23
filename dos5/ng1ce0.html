@@ -1,0 +1,50 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 07h            direct console input</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 07h            direct console input</b>">
+<title>function 07h            direct console input</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng1878.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng1f82.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 07h            Direct Console Input</B>
+
+    Waits for a character from the standard input device. Does not
+    echo, and does not check for Ctrl-C.
+
+        <B>Entry</B>   AH = 07h
+
+        <B>Return</B>  AL = Character
+
+    ------------------------------------------------------------------
+
+    If no character is available this function waits until one is
+    available.
+
+    If the character read from the keyboard is an extended key code
+    (for example, if the user presses one of the function keys), this
+    function returns 00h and the program must call the function again
+    to get the second byte of the extended key code.
+</pre><hr><b>See Also:</b> <a href="ng1878.html">06h</a> <a href="ng1f82.html">08h</a> <a href="ng22b8.html">0Bh</a> <a href="ng256f.html">0Ch</a> <a href="ng41720.html">Key codes</a> <pre></pre>
+
+
+</html>
+

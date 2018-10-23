@@ -1,0 +1,46 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - <b>function 5e02h          set printer setup                            dos 3.1+</b>, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - <b>function 5e02h          set printer setup                            dos 3.1+</b>">
+<title>function 5e02h          set printer setup                            dos 3.1+</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<br>
+<a href="ng1bd1c.html">[&lt;&lt;Previous Entry]</a> <a href="ng254.html">[^^Up^^]</a> <a href="ng1c18e.html">[Next Entry&gt;&gt;]</a> <a href="index.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+<B>Function 5E02h          Set Printer Setup                            DOS 3.1+</B>
+
+    Defines a string of control characters that DOS adds to the
+    beginning of each file sent to a network printer.
+
+        <B>Entry</B>   AX    = 5E02h
+                BX    = Assign-list index
+                CX    = Length of setup string (maximum 64 bytes)
+                DS:SI = Pointer to printer setup string
+
+       <B>Return</B>   Nothing
+                or
+                AX = Error code, if CF is set
+                     | 01h Invalid function (Network not running)
+</pre><hr><b>See Also:</b> <a href="ng1c18e.html">5e03h</a> <a href="ng1c35c.html">5f02h</a> <pre></pre>
+
+
+</html>
+
