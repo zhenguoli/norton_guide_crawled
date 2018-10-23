@@ -1,0 +1,143 @@
+
+
+
+<html>
+<head>
+<meta name=keywords content="ClipX - DOS 5.0 Ref. - Norton Guide, intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for DOS 5.0 Ref. - Norton Guide">
+<title>ClipX - DOS 5.0 Ref. - Norton Guide</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<a href="http://www.ousob.com" target="_top"><img align="right" alt="http://www.ousob.com" border="0" src="/images/cxrefine.gif"></a>
+<script type="text/javascript"><!--
+google_ad_client = "pub-3334398715559629";
+/* 728x90, created 10/8/08 */
+google_ad_slot = "3908912935";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br>
+<a href="ng378a9.php">[&lt;&lt;Previous Entry]</a> <a href="ng361d7.php">[^^Up^^]</a> <a href="ng38c9d.php">[Next Entry&gt;&gt;]</a> <a href="index.php">[Menu]</a> <a href="credits.php">[About The Guide]</a>
+<hr><pre>
+
+struc DeviceParams              ; Device parameters for medium
+ dpSpecFunc             db ?    ; Special functions
+ dpDevType              db ?    ; Device type
+ dpDevAttr              dw ?    ; Device attributes
+ dpCylinders            dw ?    ; Max. no. of cylinders (set by device)
+ dpMediaType            db ?    ; Medium currently accepted by drive
+                               ;; Start of BIOS parameter block (BPB)
+ dpBytesPerSec          dw ?    ; No. of bytes per sector
+ dpSecPerClust          db ?    ; No. of sectors per cluster
+ dpResSectors           dw ?    ; No. of reserved sectors
+ dpFATs                 db ?    ; No. of file allocation tables
+ dpRootDirEnts          dw ?    ; No. of root-directory entries
+ dpSectors              dw ?    ; Total no. of sectors (0 if &gt; 32 MB)
+ dpMedia                db ?    ; Media descriptor
+ dpFATsecs              dw ?    ; No. of sectors per FAT
+ dpSecPerTrack          dw ?    ; Sectors per track
+ dpHeads                dw ?    ; No. of heads
+ dpHiddenSecs           dd ?    ; No. of hidden sectors
+ dpHugeSectors          dd ?    ; No. of sectors if dpSectors = 0
+                               ;; End of BIOS parameter block (BPB)
+ends
+
+;       ; dpSpecFunc (Int 21h 440Dh /40h)
+;       Bit   Meaning
+;       0     0 = Use dpBytesPerSec through dpHugeSectors to set the
+;                 default BPB for this device.
+;             1 = Use the device BPB for all subsequent Build BPB
+;                 requests.
+;       1     0 = Read all fields.
+;             1 = Ignore all fields, but read the TrackLayout
+;                 structure appended to the end of this structure.
+;       2     0 = Do not use.
+;             1 = The sectors in the track are all the same size,
+;                 and the sector numbers are in the range 1 through
+;                 the total number of sectors on the track. This bit
+;                 should always be set.
+;       3-7   Reserved (must be zero).
+;
+;
+;       ; dpDevType
+;       00h = 320/360K
+;       01h = 1.2 MB
+;       02h = 720K
+;       03h = 8-inch, single-density
+;       04h = 8-inch, double-density
+;       05h = Hard disk
+;       06h = Tape drive
+;       07h = 1.44 MB
+;       08h = Read/write optical
+;       09h = 2.88 MB
+;
+;
+;       ; dpDevAttr
+;       Bit   Meaning
+;       0     0|1 = The medium is|isn't removable.
+;       1     0|1 = Disk change-line isn't|is supported
+;                   (hasn't|has door-lock support).
+;       2-15  Reserved (must be zero).
+;
+;
+;       ; dpMediaType
+;       Specifies which medium the drive currently accepts (for drives
+;       that accept more than one media type). For a 1.2 MB drive, if
+;       bit 0 is clear, it indicates, that the drive accepts
+;       quad-density, 1.2 MB disks (the default media type); if bit 0
+;       is set, the drive accepts double-density, 320/360K disks.
+;
+;
+;       ; dpSecPerClust
+;       Specifies the number of sectors in a cluster. The sectors must
+;       be consecutive, and the number must be a power of 2.
+;
+;
+;       ; dpResSectors
+;       Specifies the number of reserved sectors on the drive,
+;       beginning with sector 0. Typically, this value is 1 (for the
+;       startup sector), unless the disk-drive manufacturer's software
+;       reserves additional sectors.
+;
+;
+;       ; dpFATs
+;       Specifies the number of file allocation tables (FATs)
+;       following the reserved sectors. Most versions of DOS maintain
+;       one or more copies of the primary FAT and use the extra copies
+;       to recover data on the disk if the first FAT is corrupted.
+</pre><hr><b>See Also:</b> <a href="ng114ef.php">440Dh /60h</a> <a href="ng10650.php">440Dh /40h</a> <a href="ng3fcbb.php">TrackLayout</a> <a href="ng3d57f.php">Media types</a> <pre></pre><hr><center><b>
+<font size="-1">Online resources provided by: <a href="http://www.ousob.com" target="_top">http://www.ousob.com</a> ---  NG 2 HTML conversion by <a href="http://www.DaveP.Org" target="_top">Dave Pearson</a></b></center>
+<hr>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-3334398715559629";
+/* 728x90, created 10/8/08 */
+google_ad_slot = "6846495220";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</html>
+
